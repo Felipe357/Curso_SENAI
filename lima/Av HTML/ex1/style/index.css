@@ -1,0 +1,12 @@
+body{
+			background-image: url('../img/tabela.jpg');
+			background-repeat: no-repeat; 
+			background-size: cover;
+	}
+.img{
+			height: 80px;
+			width: 120px;
+}
+.tempo{
+			color: #fff;
+}

@@ -1,0 +1,18 @@
+body{
+			background-image: url('../img/fundo3.jpg');
+			background-repeat: no-repeat; 
+			background-size: cover;
+	}
+			
+label{
+			color: #87CEFA;
+			font-size: 30px;
+	}
+			
+.class{
+			font-weight: bolder;
+}
+
+#id{
+			font-size: 40px
+}

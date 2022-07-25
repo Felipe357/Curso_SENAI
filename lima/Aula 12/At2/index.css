@@ -1,0 +1,28 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+.pr{
+    position:absolute;
+    right: 30px;
+    top: 30px;
+}
+
+.topo{
+    font-size: 40px;
+}
+
+.pg{
+    font-size: 30px;
+}
+
+.table{
+    text-align: left ;
+    margin-left: 25%;
+    margin-top: 13%;
+    height: 20%;
+}
+
+td{
+    border-top: 1px solid black;
+}

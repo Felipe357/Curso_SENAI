@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    height: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+html, body{
+    height: 100%;
+}
+
+.geral{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 4px;
+    grid-row-gap: 4px;
+    height: 100%;
+    width: 100%;
+    }
+.geral > div{
+    height: 100%;
+    width: 100%;
+}
+    
+.divPes1 { 
+    background-color: aqua;
+    grid-area: 1 / 1 / 2 / 2; 
+}
+
+.divPes1 > img{
+    height: 50px;
+}
+
+.divPes2 { 
+    background-color: rgb(13, 65, 65);
+    grid-area: 2 / 1 / 5 / 2; 
+}
+.divPes3 {
+    background-color: black;
+    grid-area: 5 / 1 / 7 / 2; 
+}
+.divNav { 
+    background-color: blueviolet;
+    grid-area: 1 / 2 / 2 / 5; 
+}
+.divMe { 
+    background-color: brown;
+    grid-area: 2 / 2 / 4 / 5; 
+}
+.divInt { 
+    background-color: blue;
+    grid-area: 4 / 2 / 7 / 3; 
+}
+.divGe { 
+    background-color: blanchedalmond;
+    grid-area: 4 / 3 / 7 / 4; 
+}
+.divPesquisa { 
+    background-color: palevioletred;
+    grid-area: 4 / 4 / 7 / 5; 
+}

@@ -1,0 +1,56 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+html, body{
+    font-family: 'Roboto', sans-serif;
+}
+
+.pr{
+    position:absolute;
+    right: 30px;
+    top: 30px;
+}
+
+.topo{
+    font-size: 40px;
+}
+
+.pg{
+    font-size: 30px;
+}
+
+.barraCima{
+    background-color: rgb(199, 88, 88);
+    height: 14%;
+    width: 100%;
+    margin-top: 5%;
+}
+
+.barraLeft{
+    background-color: rgb(216, 125, 125);
+    height: 50%;
+    width: 20%;
+}
+
+.barraRight{
+    background-color: brown;
+    height: 50%;
+    width: 80%;
+   
+}
+
+.barraBaixo{
+    background-color: rgb(150, 64, 64);
+    height: 14%;
+    width: 100%;
+}
+
+.tudo{
+    display: flex;
+    height: 100%;
+    margin-bottom: -50vh;
+}

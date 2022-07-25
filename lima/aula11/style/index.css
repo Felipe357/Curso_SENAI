@@ -1,0 +1,257 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(231, 231, 231);
+}
+
+.header{
+    display: flex;
+    margin-top: 25px;
+    align-items: center;
+    border-bottom: 3px solid black;
+    margin: 0 auto;
+}
+
+
+
+.info1, .info2, .info3, .infoVermelho, .infoVerde, .infoLaranja{
+    margin-left: 3%;
+}
+
+.info1, .info2, .info3{
+    font-size: 25px;
+}
+
+.infoVermelho{
+    color: red;
+}
+
+.infoVerde{
+    color: green;
+}
+
+.infoLaranja{
+    color: blue;
+}
+
+.barraBusca{
+    width: 25px;
+    height: auto;
+    float: right;
+    background-color:transparent;
+    padding-left:5px;
+    font-style:italic;
+    font-size:18px;
+    border:none;
+}
+
+input{
+    background: none;
+    border: none;
+    align-items: center;
+}
+
+.buscar{
+    margin-left: 35%;
+    background-color:#969696;
+    border:solid 1px;
+    border-radius:15px;
+    width:300px;
+}
+
+.logo{
+    margin-left: 15%;
+    width: 100px;
+    height: auto;
+}
+
+.pasaro{
+    width: 350px;
+    height: auto;
+}
+
+.vacina{
+    width: 350px;
+    height: auto;
+}
+
+.INDIA{
+    width: 350px;
+    height: auto;
+}
+
+.geral{
+    display: flex;
+}
+
+.tudoMeio{
+    margin-top: 3%;
+    margin-left: 300px;
+}
+
+.tudoMeio {
+    display: grid;
+    width: 40%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 10px;
+    
+ }
+ 
+ .div1 { 
+     grid-area: 1 / 1 / 2 / 3; 
+     margin-top: 2%;
+ }
+
+ .div2 { 
+     grid-area: 1 / 2 / 2 / 3; 
+     margin-top: 7%;
+     font-size: 20px;
+ }
+
+ .div3 {
+     grid-area: 2 / 1 / 3 / 3; 
+     margin-top: 2%;
+ }
+
+ .div4 { 
+     grid-area: 2 / 2 / 3 / 3; 
+     margin-top: 7%;
+     font-size: 20px;
+ }
+
+ .div5 { 
+     grid-area: 3 / 1 / 4 / 3; 
+     margin-top: 2%;
+ }
+
+ .div6 { 
+     grid-area: 3 / 2 / 4 / 3; 
+     margin-top: 7%;
+     font-size: 20px;
+ }
+
+ p{
+     margin-top: 25px;
+ }
+
+ .temas {
+     margin-top: 4%;
+     margin-left: 15%;
+     height: 400px;
+ }
+
+ .temas {
+     display: grid;
+     grid-template-columns: 1fr;
+     grid-template-rows: repeat(6, 1fr);
+     grid-column-gap: 0px;
+     grid-row-gap: 0px;
+     background-color: aliceblue;
+     width: 200px;
+     align-items: center;
+ }
+ 
+ .div12 { 
+     grid-area: 1 / 1 / 2 / 2; 
+     border-bottom: 1px solid black;
+     padding: 10px;
+     font-size: 12pt;
+ } 
+ .div22 { 
+     grid-area: 2 / 1 / 3 / 2; 
+     border-bottom: 1px solid black;
+     display: flex;
+     justify-content: center;
+     width: 150px;
+     padding: 10px;
+     margin: 0 auto;
+     font-size: 12pt;
+ }
+ .div32 { 
+     grid-area: 3 / 1 / 4 / 2; 
+     border-bottom: 1px solid black;
+     display: flex;
+     justify-content: center;
+     width: 150px;
+     padding: 10px;
+     margin: 0 auto;
+     font-size: 12pt;
+ }
+ .div42 { 
+     grid-area: 4 / 1 / 5 / 2; 
+     border-bottom: 1px solid black;
+     display: flex;
+     justify-content: center;
+     width: 150px;
+     padding: 10px;
+     margin: 0 auto;
+     font-size: 12pt;
+ }
+ .div52 { 
+     grid-area: 5 / 1 / 6 / 2; 
+     border-bottom: 1px solid black;
+     display: flex;
+     justify-content: center;
+     width: 150px;
+     padding: 10px;
+     margin: 0 auto;
+     font-size: 12pt;
+ }
+ .div62 { 
+     grid-area: 6 / 1 / 7 / 2; 
+     border-bottom: 1px solid black;
+     display: flex;
+     justify-content: center;
+     width: 150px;
+     padding: 10px;
+     margin: 0 auto;
+     font-size: 12pt;
+ }
+
+ @media(max-width:900px){
+
+    .geral{
+        position: relative;
+        left: -200px;
+    }
+
+    .pasaro, .INDIA, .vacina{
+        width: 280px;
+        height: auto;
+        margin-top: 120px; 
+    }
+
+    .info1, .info2, .info3, .infoVermelho, .infoVerde, .infoLaranja{
+        display: none;
+    }
+    .buscar{
+        display: none;
+    }
+    .header{
+        margin-left: 35%;
+        border: none;
+        width: 90%;
+    }
+
+    .temas{
+        display: none;
+    }
+
+    h3{
+        position: relative;
+        top: 300px;
+        width: 300px;
+    }
+
+    p{
+        position: relative;
+        top: 300px;
+    }
+    
+}
+

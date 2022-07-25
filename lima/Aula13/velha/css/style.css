@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    height: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.velha {
+    display: grid;
+    grid-template-columns: 20vw 20vw 20vw;
+    grid-template-rows: 30vh 30vh 30vh;
+    grid-template-areas: "c1 c2 c3" "m1 m2 m3" "b1 b2 b3";
+    }
+    
+    .div1 { 
+        height: 100%;
+        grid-area: c1; 
+        border-right: 3px solid black;
+        border-bottom: 3px solid black;
+        background-image: url(https://images.vexels.com/media/users/3/155299/isolated/preview/1988d1faba4d059eb4461d955af5cf61-rabisco-de-marca-x.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 50%;
+    }
+    .div2 { 
+        height: 100%;
+        grid-area: c2; 
+        border-bottom: 3px solid black;
+        background-image: url(https://images.vexels.com/media/users/3/155299/isolated/preview/1988d1faba4d059eb4461d955af5cf61-rabisco-de-marca-x.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 50%;
+    }
+    .div3 { 
+        height: 100%;
+        grid-area: c3; 
+        border-bottom: 3px solid black;
+        border-left: 3px solid black;
+        background-image: url(https://freepikpsd.com/file/2019/10/circulo-preto-em-png-1-Transparent-Images.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 50%;
+    }
+    .div4 {
+        height: 100%;
+        grid-area: m1; 
+        border-right: 3px solid black;
+        border-bottom: 3px solid black;
+        background-image: url(https://freepikpsd.com/file/2019/10/circulo-preto-em-png-1-Transparent-Images.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 50%;
+    }
+    .div5 {
+        height: 100%;
+        grid-area: m2; 
+        border-bottom: 3px solid black;
+        background-image: url(https://images.vexels.com/media/users/3/155299/isolated/preview/1988d1faba4d059eb4461d955af5cf61-rabisco-de-marca-x.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 50%;
+        }
+    .div6 {
+        height: 100%;
+        grid-area: m3; 
+        border-bottom: 3px solid black;
+        border-left: 3px solid black;
+        background-image: url(https://images.vexels.com/media/users/3/155299/isolated/preview/1988d1faba4d059eb4461d955af5cf61-rabisco-de-marca-x.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 50%;
+    }
+    .div7 {
+        height: 100%;
+        grid-area: b1; 
+        border-right: 3px solid black;
+        background-image: url(https://images.vexels.com/media/users/3/155299/isolated/preview/1988d1faba4d059eb4461d955af5cf61-rabisco-de-marca-x.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 50%;
+    }
+    .div8 { 
+        height: 100%;
+        grid-area: b2; 
+        background-image: url(https://freepikpsd.com/file/2019/10/circulo-preto-em-png-1-Transparent-Images.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 50%;
+    }
+    .div9 { 
+        height: 100%;
+        grid-area: b3;
+        border-left: 3px solid black;
+        background-image: url(https://freepikpsd.com/file/2019/10/circulo-preto-em-png-1-Transparent-Images.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 50%;
+    }

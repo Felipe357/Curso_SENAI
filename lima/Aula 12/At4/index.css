@@ -1,0 +1,43 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+.pr{
+    position:absolute;
+    right: 30px;
+    top: 30px;
+}
+
+.topo{
+    font-size: 40px;
+}
+
+.pg{
+    font-size: 30px;
+}
+
+.red{
+    background-color: red;
+    width: 33%;
+    height: 90%;
+    margin-top: 30px;
+}
+
+.green{
+    background-color: rgb(59, 241, 59);
+    width: 33%;
+    height: 90%;
+    margin-top: 30px;
+}
+
+.blue{
+    background-color: rgb(38, 38, 255);
+    width: 33%;
+    height: 90%;
+    margin-top: 30px;
+}
+
+.tudo{
+    display: flex;
+    height: 100%;
+}

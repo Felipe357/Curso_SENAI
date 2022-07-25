@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    height: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: grid;
+    grid-template-rows: 10vh 80vh 10vh;
+    grid-template-columns: 30vw 70vw;
+    grid-template-areas: "h h" "n m" "f f";
+}
+
+header{
+    height: 100%;
+    grid-area: h;
+    background-color: rgb(201, 120, 248);
+}
+
+nav{
+    height: 100%;
+    grid-area: n;
+    background-image: linear-gradient(to top left, black, purple, pink);
+}
+
+main{
+    height: 100%;
+    grid-area: m;
+    background-image: linear-gradient(to top right, black, purple, pink);
+}
+
+footer{
+    height: 100%;
+    grid-area: f;
+    background-color: rgb(201, 120, 248);
+}
