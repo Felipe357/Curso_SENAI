@@ -1,39 +1,27 @@
 var infoPlaca = document.querySelector("#busca");
-
-var resultPlaca = document.querySelector("#resultPlaca");
-
-var btPlaca = document.querySelector("button");
-
+var resultPlaca = document.querySelector("#placaRes");
+var btPlaca = document.querySelector("#btPlaca");
 btPlaca.addEventListener("click", validarPlaca);
-
 function validarPlaca(){
-
-    // falta retornar true our false
-    var vf = true;
     var placa = infoPlaca.value;
     const placaAntiga = /^[a-zA-Z]{3}[0-9]{4}$/;
     const placaNova = /^[a-zA-Z]{3}[0-9]{1}[a-zA-Z]{1}[0-9]{2}$/;
-
     if(placaAntiga.test(placa)){ 
-
-        console.log("Placa válida");
-        resultPlaca.innerHTML = "Placa válida"
-
+        resultPlaca.innerHTML = "Placa válida";
     } else if(placaNova.test(placa)){
-
-        console.log("Placa válida");
-        resultPlaca.innerHTML = "Placa válida"
-
+        resultPlaca.innerHTML = "Placa válida";
     }else {
-
-    console.log("Placa inválida");
-
+    resultPlaca.innerHTML = "Placa inválida";
     }
-
-    
 }
 
-function validaCPF(cpf){
+var infoCPF = document.querySelector("#bcCPF");
+var btCPF = document.querySelector("#btCPF");
+var resultCPF = document.querySelector("#cpfRes")
+btCPF.addEventListener("click", validaCPF)
+
+function validaCPF(){
+    var cpf = infoCPF.value;
     cpf = cpf.replace(/\D/g, '');
     if(cpf.toString().length != 11 || /^(\d)\1{10}$/.test(cpf)) return false;
     var result = true;
@@ -46,8 +34,31 @@ function validaCPF(cpf){
         r = (r <2)?0:11-r;
         if(r != cpf.substring(j, j+1)) result = false;
     });
-    return result;
+    if(result == true){
+        resultCPF.innerHTML = "CPF válido"
+        return console.log(result);
+    }else{
+        resultCPF.innerHTML = "CPF inválido"
+        return console.log(result);
+    }
+
 }
 
-console.log('11111111111', cpf('11111111111'));
-console.log('825.566.405-02', cpf('825.566.405-02'));
+var btphone = document.querySelector("#gen");
+var resultPhone = document.querySelector("#telefones");
+var infophone = document.querySelector("#tel");
+
+btphone.addEventListener("click", gerarnumeros)
+
+function gerarnumeros(){
+    let qnt = infophone.value;
+    let i = 0;
+    
+    while(i < qnt){
+        let phone = `${"(19)"}${Math.floor(Math.random() * (99999 - 11111 + 1)) + 111111}-${Math.floor(Math.random() * (9999 - 1111 + 1)) + 1111}               `;
+        resultPhone.innerHTML += phone;
+        console.log(phone);
+        i++
+    }
+    
+}
