@@ -62,3 +62,46 @@ function gerarnumeros(){
     }
     
 }
+
+var cpf = new Object(); // Cria o objeto
+cpf = {
+  geraCPF: function(){ // Gera numeros aleatórios pro cpf
+    function alet(){
+        var nRnd = Math.round(Math.random() * (100 / 11));
+        return nRnd;
+    }
+    var cpfResult = "xxx.xxx.xxx-".replace(/x/ig, alet);
+    var cR = cpfResult;
+    var calcula = (cR[0]*10)+(cR[1]*9)+(cR[2]*8)+(cR[4]*7)+(cR[5]*6)+(cR[6]*5)+(cR[8]*4)+(cR[9]*3)+(cR[10]*2);
+    var restoC = calcula % 11;
+    var digitoJ = undefined;
+    var digitoK = undefined;
+    if(restoC == 1 || restoC == 0){
+      digitoJ = 0;
+    }else{
+      digitoJ = 11 - restoC;
+    }
+    var cpfFinalResultado = cpfResult +"" + digitoJ; 
+    var cR2 = cpfFinalResultado;
+    var calcula2 = (cR2[0]*11)+(cR2[1]*10)+(cR2[2]*9)
+    +(cR2[4]*8)+(cR2[5]*7)+(cR2[6]*6)
+    +(cR2[8]*5)+(cR2[9]*4)+(cR2[10]*3)
+    +(cR2[12]*2);
+    var restoC2 = calcula2 % 11;
+    if(restoC2 == 1 || restoC2 == 0){
+      digitoK = 0;
+    }else{
+      digitoK = 11 - restoC2;
+    }
+    var cpfFinalResultado2 = cpfFinalResultado + "" + digitoK;
+    console.log(digitoK);
+    return cpfFinalResultado2;
+  },
+  alteraCPF: function(){
+    var labelResult = document.querySelector("#cpf");
+    labelResult.textContent = "CPF gerado: " + cpf.geraCPF();
+  }
+}
+
+var btnGerar = document.querySelector("#geracpf");
+btnGerar.addEventListener("click", cpf.alteraCPF);
