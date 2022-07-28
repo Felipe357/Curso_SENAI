@@ -53,7 +53,7 @@ btphone.addEventListener("click", gerarnumeros)
 function gerarnumeros(){
     let qnt = infophone.value;
     let i = 0;
-    
+    //realiza a função x vezes
     while(i < qnt){
         let phone = `${"(19)"}${Math.floor(Math.random() * (99999 - 11111 + 1)) + 111111}-${Math.floor(Math.random() * (9999 - 1111 + 1)) + 1111}               `;
         resultPhone.innerHTML += phone;
@@ -62,6 +62,8 @@ function gerarnumeros(){
     }
     
 }
+
+var pegaqnt = document.querySelector("#pegaqnt");
 
 var cpf = new Object(); // Cria o objeto
 cpf = {
@@ -83,10 +85,7 @@ cpf = {
     }
     var cpfFinalResultado = cpfResult +"" + digitoJ; 
     var cR2 = cpfFinalResultado;
-    var calcula2 = (cR2[0]*11)+(cR2[1]*10)+(cR2[2]*9)
-    +(cR2[4]*8)+(cR2[5]*7)+(cR2[6]*6)
-    +(cR2[8]*5)+(cR2[9]*4)+(cR2[10]*3)
-    +(cR2[12]*2);
+    var calcula2 = (cR2[0]*11)+(cR2[1]*10)+(cR2[2]*9)+(cR2[4]*8)+(cR2[5]*7)+(cR2[6]*6)+(cR2[8]*5)+(cR2[9]*4)+(cR2[10]*3)+(cR2[12]*2);
     var restoC2 = calcula2 % 11;
     if(restoC2 == 1 || restoC2 == 0){
       digitoK = 0;
@@ -99,7 +98,14 @@ cpf = {
   },
   alteraCPF: function(){
     var labelResult = document.querySelector("#cpf");
-    labelResult.textContent = "CPF gerado: " + cpf.geraCPF();
+    let qnt = pegaqnt.value;
+    let i = 0
+    //realiza a função x vezes
+    while(i < qnt){
+      labelResult.textContent += cpf.geraCPF() + "       ";
+      i++
+    }
+    
   }
 }
 
