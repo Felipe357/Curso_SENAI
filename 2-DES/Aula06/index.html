@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="img-fundo"></div>
+
+    <div class="container">
+
+      <div class="header">
+        <h2>Xurasteidurango</h2>
+      </div>
+
+      <form id="form" class="form">
+
+        <div class="form-control">
+          <label for="id">Nome</label>
+          <input type="text" id="nome" placeholder="Digite o nome..."/>
+          <i class="fas fa-exclamation-circle"></i>
+          <i class="fas fa-check-circle"></i>
+          <small>Mensagem de erro</small>
+        </div>
+
+        <div class="form-control">
+          <label for="nome">Cargo</label>
+          <input type="text" id="cargo" placeholder="Digite o cargo..." />
+          <i class="fas fa-exclamation-circle"></i>
+          <i class="fas fa-check-circle"></i>
+          <small>Mensagem de erro</small>
+        </div>
+
+        <div class="form-control">
+          <label for="endereco">Salário</label>
+          <input type="text" id="salario" placeholder="Digite o salario..."/>
+          <i class="fas fa-exclamation-circle"></i>
+          <i class="fas fa-check-circle"></i>
+          <small>Mensagem de erro</small>
+        </div>
+
+        <button class="button" id="button01" type="submit">Cadastrar</button>
+
+      </form>
+      
+    </div>
+
+    <div class="tabela">
+        <table>
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Cargo</th>
+                <th>Salário</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+<script src="./script.js"></script>
+</html>
