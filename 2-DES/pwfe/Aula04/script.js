@@ -55,7 +55,7 @@ function gerarnumeros(){
     let i = 0;
     //realiza a função x vezes
     while(i < qnt){
-        let phone = `${"(19)"}${"-9"}${Math.floor(Math.random() * 8999) + 1000}-${Math.floor(Math.random() * 8999) + 1000}               `;
+        let phone = `${"(19)"}${"-9"}${Math.floor(Math.random() * 8999) + 1000}-${Math.floor(Math.random() * 8999) + 1000}\r\n`;
         resultPhone.innerHTML += phone;
         console.log(phone);
         i++
