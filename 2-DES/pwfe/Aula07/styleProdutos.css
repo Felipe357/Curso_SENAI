@@ -1,0 +1,56 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.header{
+    height: 9vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    background-color: #762ba8;
+    color: aliceblue;
+}
+
+.left{
+    height: 100%;
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.right{
+    height: 100%;
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.canecaimg{
+    height: 60px;
+    width: auto;
+    border-radius: 50%;
+}
+
+.principal{
+    color: aliceblue;
+}
+
+.body{
+    height: 91vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.produtos{
+    height: 80vh;
+    width: 70vw;
+    background-color: blueviolet;
+    display: flex;
+    justify-content: space-around;
+}
