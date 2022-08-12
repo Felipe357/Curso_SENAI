@@ -53,4 +53,32 @@
     background-color: blueviolet;
     display: flex;
     justify-content: space-around;
+    align-items: center;
+}
+
+.info_produto{
+    display: flex;
+    flex-direction: column;
+}
+
+#img_produto{
+    height: 200px;
+    border-radius: 10px;
+}
+
+.nome_produto{
+    padding-top: 10px;
+    padding-left: 10px;
+    color: rgb(255, 255, 255);
+}
+
+.valor_produto{
+    padding-top: 10px;
+    padding-left: 10px;
+    color: rgb(0, 0, 0);
+}
+
+.modelo {
+    visibility: hidden;
+    display: none;
 }

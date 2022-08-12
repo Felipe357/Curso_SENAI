@@ -47,6 +47,44 @@ function validaUser(){
     if (!validou) {
         window.alert("Usuário inválido")    
     }
-    
 
+}
+
+var produtos = [
+    {
+        "id":"1",
+        "foto":"https://cdn.discordapp.com/attachments/631275586035122206/1007042562403618856/unknown.png",
+        "nome":"chupeta",
+        "valor":"50,00"
+    },
+
+    {
+        "id":"2",
+        "foto":"https://cdn.discordapp.com/attachments/631275586035122206/1007042636831539240/unknown.png",
+        "nome":"tampinha",
+        "valor":"11,00"
+    },
+
+    {
+        "id":"3",
+        "foto":"https://cdn.discordapp.com/attachments/631275586035122206/1007043065220956301/unknown.png",
+        "nome":"capacete",
+        "valor":"500,00"
+    }
+];
+
+var pr = document.querySelector(".info_produto");
+
+function carregar() { 
+    produtos.forEach(item => {
+        let novoproduto = pr.cloneNode(true);
+
+        novoproduto.classList.remove("modelo");
+
+        novoproduto.querySelector("#img_produto").src = item.foto;
+        novoproduto.querySelector(".nome_produto").innerHTML = item.nome;
+        novoproduto.querySelector(".valor_produto").innerHTML = item.valor;
+
+        document.querySelector(".produtos").appendChild(novoproduto);
+    });
 }
