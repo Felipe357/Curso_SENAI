@@ -98,7 +98,7 @@ describe fichas;
 
 show tables;
 
-LOAD DATA INFILE 'C:/Users/DESENVOLVIMENTO/Desktop/Curso_SENAI/2-DES/bcd/Aula04/csv/ex2/ex2-alunos.csv'
+LOAD DATA INFILE 'C:/Users/felip/OneDrive/Área de Trabalho/SENAI/2-DES/bcd/Aula04/csv/ex2/ex2-alunos.csv'
 INTO TABLE alunos
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'

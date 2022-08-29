@@ -6,11 +6,6 @@
 }
 
 body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #fb5b3b46;
 }
 
 .navbar{
@@ -22,11 +17,13 @@ body{
     justify-content: space-between;
     font-size: 40px;
     font-family:'Courier New', Courier, monospace;
-    background-color: #f72711;
-    box-shadow: 4px 4px 4px 4px rgba(218, 23, 23, 0.767);
+    background-color: #ffffff;
+    box-shadow: 4px 4px 4px 4px rgba(216, 202, 10, 0.767);
 }
 
 .botais{
+    display: flex;
+    align-items: center;
     width: max-content;
     margin-left: 20px;
 }
@@ -39,16 +36,24 @@ body{
 .tudao{
     display: flex;
     flex-wrap: wrap;
+    min-height: 100vh;
+    width: 100vw;
+    background-image: url("https://ld-wp73.template-help.com/wordpress/prod_18253/v2/wp-content/uploads/2022/03/fitness_bg1.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
 }
 
-.container{
+.containerAluno, .containerFicha, .containerAparelho, .containerEx{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     padding: 20px;
     height: 160px;
     width: 400px;
-    background-color: #f94126;
+    background: linear-gradient(-95deg, #ff00d4a4, #ffe600);
     border-radius: 20px;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     margin-left: 400px;
@@ -75,8 +80,8 @@ body{
 }
 
 .glow-on-hover {
-    width: 120px;
-    height: 50px;
+    width: 100px;
+    height: 40px;
     border: none;
     outline: none;
     color: #fff;
@@ -85,12 +90,13 @@ body{
     position: relative;
     z-index: 0;
     border-radius: 10px;
-    font-size: x-large;
+    font-size: 40%;
+    margin: 10px;
 }
 
 .glow-on-hover:before {
     content: '';
-    background: linear-gradient(45deg, #ff0000, #cc1811, #7e0e0e, #f04f4f, #da1313, #dd0c0c, #ff0000);
+    background: linear-gradient(45deg, #eeff00, #cca011, #777e0e, #f0aa4f, #dab613, #ddac0c, #ffe600);
     position: absolute;
     top: -2px;
     left:-2px;
@@ -123,7 +129,7 @@ body{
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgb(185, 18, 18);
+    background: rgb(236, 152, 25);
     left: 0;
     top: 0;
     border-radius: 10px;

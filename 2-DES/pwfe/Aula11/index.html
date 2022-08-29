@@ -7,25 +7,21 @@
     <link rel="stylesheet" href="style.css">
     <title>Front-Academia</title>
 </head>
-<body onload="carregar()">
+<body onload="carregarAluno()">
 
     <div class="navbar">
         <div class="botais">
-            <a href="./pages/ficha.html">
-                <button class="glow-on-hover" type="button">Aparelhos</button>
-            </a>
-            <a href="./pages/ficha.html">
-                <button class="glow-on-hover" type="button">Exercicios</button>
-            </a>
-            <a href="./pages/ficha.html">
-                <button class="glow-on-hover" type="button">Ficha</button>
-            </a>
+                <button class="glow-on-hover" type="button" onclick="carregarAparelho()">Aparelhos</button>
+                <button class="glow-on-hover" type="button" onclick="carregarExercicios()">Exercicios</button>
+                <button class="glow-on-hover" type="button" onclick="carregarFicha()">Ficha</button>
+                <button class="glow-on-hover" type="button" onclick="carregarAluno()">Aluno</button>
+           
         </div>
         <span class="titulo">Bambi</span>
     </div>
     
     <div class="tudao">
-        <div class="container modelo">
+        <div class="containerAluno ">
             <div class="idNome">
                 <span id="id">2</span>
                 <span id="nome">Adalgamir</span>
@@ -47,6 +43,54 @@
                 <span id="sexo">M</span>
             </div>
         </div>
+
+        <div class="containerFicha ">
+            <div class="idNoFicha">
+                <span id="idNoFicha">as23233dasd</span>
+            </div>
+
+            <div class="idEx">
+                <span id="exFicha">asdasd</span>
+            </div>
+
+            <div class="diaS">
+                <span id="diaSemana">asdad</span>
+            </div>
+
+            <div class="serie">
+                <span id="serie">asdasd</span>
+            </div>
+        </div>
+
+        <div class="containerAparelho ">
+            <div class="idAparelho">
+                <span id="idAparelho">asdasd</span>
+            </div>
+
+            <div class="nomeAparelho">
+                <span id="nomeAparelho">asdasd</span>
+            </div>
+        </div>
+
+        <div class="containerEx ">
+            <div class="id_Ex">
+                <span id="id_Ex">asdasd</span>
+            </div>
+
+            <div class="desc">
+                <span id="desc">asd23233asd</span>
+            </div>
+
+            <div class="gm">
+                <span id="grupo_muscular">asdad</span>
+            </div>
+
+            <div class="id_aparelho">
+                <span id="id_aparelho">asdasd</span>
+            </div>
+        </div>
+
+
     </div>
 
 </body>
