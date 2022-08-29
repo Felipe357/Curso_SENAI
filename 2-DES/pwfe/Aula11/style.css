@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #fb5b3b46;
+}
+
+.navbar{
+    height: 60px;
+    width: 100vw;
+    position: absolute;
+    top: 0px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 40px;
+    font-family:'Courier New', Courier, monospace;
+    background-color: #f72711;
+    box-shadow: 4px 4px 4px 4px rgba(218, 23, 23, 0.767);
+}
+
+.botais{
+    width: max-content;
+    margin-left: 20px;
+}
+
+.titulo{
+    width: 200px;
+    margin-right: 40px;
+}
+
+.tudao{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+    height: 160px;
+    width: 400px;
+    background-color: #f94126;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    margin-left: 400px;
+    margin-bottom: 30px;
+}
+
+.idNome{
+    display: flex;
+    height: 30px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+#nome{
+    width: 220px;
+    border-left: 80px;
+}
+
+.modelo{
+    visibility: hidden;
+    display: none;
+}
+
+.glow-on-hover {
+    width: 120px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background-color: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    font-size: x-large;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #cc1811, #7e0e0e, #f04f4f, #da1313, #dd0c0c, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: rgb(206, 51, 51)
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(185, 18, 18);
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}

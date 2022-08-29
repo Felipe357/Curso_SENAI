@@ -22,6 +22,14 @@ show tables;
 
 select * from clientes;
 
+LOAD DATA INFILE 'C:/Users/DESENVOLVIMENTO/Desktop/Curso_SENAI/2-DES/bcd/Aula04/csv/ex1/clientes.csv'
+INTO TABLE clientes
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
+
+
 LOAD DATA INFILE 'C:/Users/DESENVOLVIMENTO/Desktop/Curso_SENAI/2-DES/bcd/Aula04/csv/ex1/telefones.csv'
 INTO TABLE telefones
 FIELDS TERMINATED BY ';'
@@ -30,6 +38,13 @@ LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
 select * from telefones;
+
+create view vw_clientes as
+select clientes.id_cliente, clientes.nome, clientes.nascimento, clientes.sexo, clientes.peso, telefones.numero as telefone from clientes clientes
+inner join telefones telefones
+on clientes.id_cliente = telefones.id_cliente;
+
+select * from vw_clientes;
 
 --Exercicio 2
 
@@ -118,6 +133,13 @@ ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
+create view vw_alunos as
+select alunos.id_aluno, alunos.nome, alunos.nascimento, alunos.sexo, alunos.peso, telefones.numero as telefones from alunos alunos
+inner join telefones telefones
+on alunos.id_aluno = telefones.id_aluno;
+
+select * from vw_alunos;
+
 --Exercicio 3
 
 -- Importação de arquivos CSV
@@ -165,6 +187,13 @@ LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
 select * from mot_linha;
+
+create view vw_motorista as
+select motoristas.cpf, motoristas.nome_motorista, telefones.telefone as telefones from motoristas motoristas
+inner join telefones telefones
+on motoristas.cpf = telefones.cpf;
+
+select * from vw_motorista;
 
 --Exercicio 4
 
@@ -222,6 +251,13 @@ FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
+
+create view vw_clinetes as
+select clientes.cod_cli, clientes.nome, clientes.endereco, clientes.bairro, clientes.cidade, clientes.uf, telefones.tipo, telefones.telefone as telefones from clientes clientes
+inner join telefones telefones
+on clientes.cod_cli = telefones.cod_cli;
+
+select * from vw_clinetes;
 
 -- Exercicio 5
 
@@ -318,3 +354,10 @@ FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
+
+create view vw_clientes as
+select clientes.id_cliente, clientes.cpf, clientes.nome, clientes.cep, clientes.numero, clientes.complemento, telefones.numero as telefones from clientes clientes
+inner join telefones telefones
+on clientes.id_cliente = telefones.id_cliente;
+
+select * from vw_clientes;
