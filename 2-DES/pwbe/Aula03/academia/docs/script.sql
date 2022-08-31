@@ -47,35 +47,35 @@ describe fichas;
 
 show tables;
 
-LOAD DATA INFILE 'C:/Users/DESENVOLVIMENTO/Desktop/Curso_SENAI/2-DES/bcd/Aula04/csv/ex2/ex2-alunos.csv'
+LOAD DATA INFILE 'C:/Users/felip/OneDrive/Área de Trabalho/SENAI/2-DES/pwbe/Aula03/academia/docs/ex2-alunos.csv'
 INTO TABLE alunos
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:/Users/DESENVOLVIMENTO/Desktop/Curso_SENAI/2-DES/bcd/Aula04/csv/ex2/ex2-telefones.csv'
+LOAD DATA INFILE 'C:/Users/felip/OneDrive/Área de Trabalho/SENAI/2-DES/pwbe/Aula03/academia/docs/ex2-telefones.csv'
 INTO TABLE telefones
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:/Users/DESENVOLVIMENTO/Desktop/Curso_SENAI/2-DES/bcd/Aula04/csv/ex2/ex2-exercicio.csv'
+LOAD DATA INFILE 'C:/Users/felip/OneDrive/Área de Trabalho/SENAI/2-DES/pwbe/Aula03/academia/docs/ex2-exercicio.csv'
 INTO TABLE exercicios
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:/Users/DESENVOLVIMENTO/Desktop/Curso_SENAI/2-DES/bcd/Aula04/csv/ex2/ex2-aparelhos .csv'
+LOAD DATA INFILE 'C:/Users/felip/OneDrive/Área de Trabalho/SENAI/2-DES/pwbe/Aula03/academia/docs/ex2-aparelhos .csv'
 INTO TABLE aparelhos
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:/Users/DESENVOLVIMENTO/Desktop/Curso_SENAI/2-DES/bcd/Aula04/csv/ex2/ex2-ficha.csv'
+LOAD DATA INFILE 'C:/Users/felip/OneDrive/Área de Trabalho/SENAI/2-DES/pwbe/Aula03/academia/docs/ex2-ficha.csv'
 INTO TABLE fichas
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
