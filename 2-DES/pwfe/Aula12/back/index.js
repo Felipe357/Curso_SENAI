@@ -38,6 +38,31 @@ app.post("/produtos", (req, res) => {
 
 })
 
+app.delete("/produtos", (req, res) => {
+    let query = `delete from produtos where cod = '${req.body.cod}'`
+
+    conDB.query(query, (err, result) => {
+        if(err == null) {
+            res.status(200).json(req.body).end()
+        } else {
+            res.status(400).json(err).end()
+        }
+    })
+})
+
+app.put("/produtos", (req, res) => {
+    let query = `update produtos set cod = '${req.body.cod}', nome = '${req.body.nome}', qntd = ${req.body.qntd}, preco = ${req.body.preco} where cod = '${req.body.cod}' `
+
+    conDB.query(query, (err, result) => {
+        if(err == null) {
+            res.status(200).json(req.body).end()
+        } else {
+            console.log(err)
+            res.status(400).json(err).end()
+        }
+    })
+})
+
 app.listen(5000, () => {
     console.log("Respondendo na porta 5000");
 });

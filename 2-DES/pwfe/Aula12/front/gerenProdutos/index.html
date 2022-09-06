@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <aside>
+        <nav>
+            <ul>
+                <li>Gerenciar Produtos</li>
+                <li>Gerencia Funcionários</li>
+                <li>Efetuar Venda</li>
+                <li>Relatótio de Vendas</li>
+            </ul>
+        </nav>
+    </aside>
+    <main>
+        <button class="cadastrar">Cadastrar <img class="icone" src="./imgs/cadastro.png" alt=""></button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th>Quantidades</th>
+                    <th>Preço</th>
+                </tr>
+            </thead>
+            <tbody id="lista-produtos">
+                <tr class=" linhaModelo model">
+                    <td></td>  
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><button id="exclui"><img class="icone" src="./imgs/lixeira.png" alt=""></button></td>
+                    <td><button id="edita"><img class="icone" src="./imgs/botao-editar.png" alt=""></button></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <div class="modal excluir model">
+        <div class="modal-content">
+            <button onclick="fecharModalExcluir()"><img class="icone" src="./imgs/close.png" alt="icone"></button>
+            <div class="modal-content-body">
+                <p>Alerta de Exclusão<br><br>Tem certeza que deseja excluir o produto com o código: <span id="cod"></span></p>
+            </div>
+            <div class="modal-content-footer">
+                <button onclick="excluirProduto()" class="btn confirma">Confirmar</button>
+                <button onclick="fecharModalExcluir()" class="btn cancel">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal editar model">
+        <div class="modal-content">
+            <button onclick="fecharModalEditar()" ><img class="icone" src="./imgs/close.png" alt=""></button>
+            <div class="modal-content-body">
+                <input type="text" id="codigo" placeholder="Código do produto">
+                <input type="text" id="nome" placeholder="Nome do produto">
+                <input type="number" id="quantidade" placeholder="Quantidade em estoque">
+                <input type="number" id="valor" placeholder="Valor unitário">
+            </div>
+            <div class="modal-content-footer">
+                <button onclick="editarProduto()" class="btn confirma">Editar</button>
+                <button onclick="fecharModalEditar()" class="btn cancel">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="script.js"></script>
+</html>
