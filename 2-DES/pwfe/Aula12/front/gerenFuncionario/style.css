@@ -1,0 +1,27 @@
+@import url("../global/styles/estrutura.css");
+
+table{
+    width: 100%;
+    margin-top: 30px;
+} 
+
+table > tbody > tr > td{
+    text-align: center;
+}
+
+table tr{
+    margin: 20px;
+}
+
+.icone{
+    width: 20px;
+}
+
+button{
+    background: none;
+    border: none;
+}
+
+button:hover{
+    cursor: pointer;
+}

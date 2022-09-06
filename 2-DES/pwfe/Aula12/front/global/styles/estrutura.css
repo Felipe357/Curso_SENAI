@@ -101,19 +101,22 @@ input{
     margin-top: 10px;
 }
 
-.cadstrar{
+.cadastrar{
     display: flex;
     align-items: center;
+    justify-content: space-around;
     padding: 10px 15px;
     border-radius: 5px;
     border: 1px solid #368;
+    height: 40px;
+    width: 120px;
 }
 
-.cadstrar:hover{
+.cadastrar:hover{
     color:#fff;
     background-color: #368;
 }
 
-.cadstrar>img{
+.cadastrar>img{
     margin-left: 10px;
 }

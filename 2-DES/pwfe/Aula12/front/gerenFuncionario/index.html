@@ -23,15 +23,17 @@
         <table>
             <thead>
                 <tr>
-                    <th>Código</th>
+                    <th>Matricula</th>
                     <th>Nome</th>
-                    <th>Quantidades</th>
-                    <th>Preço</th>
+                    <th>Cargo</th>
+                    <th>Salário</th>
+                    <th>CPF</th>
                 </tr>
             </thead>
             <tbody id="lista-produtos">
                 <tr class=" linhaModelo model">
                     <td></td>  
+                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -59,10 +61,11 @@
         <div class="modal-content">
             <button onclick="fecharModalEditar()" ><img class="icone" src="./imgs/close.png" alt=""></button>
             <div class="modal-content-body">
-                <input type="text" id="codigo" placeholder="Código do produto">
-                <input type="text" id="nome" placeholder="Nome do produto">
-                <input type="number" id="quantidade" placeholder="Quantidade em estoque">
-                <input type="number" id="valor" placeholder="Valor unitário">
+                <input type="text" id="matricula" placeholder="Matricula do funcionário">
+                <input type="text" id="nome" placeholder="Nome do funcionário">
+                <input type="text" id="cargo" placeholder="Cargo do funcionário">
+                <input type="number" id="salario" placeholder="Salário do funcionário">
+                <input type="text" id="cpf" placeholder="CPF do funcionário">
             </div>
             <div class="modal-content-footer">
                 <button onclick="editarProduto()" id="cadedit" class="btn confirma">Editar</button>

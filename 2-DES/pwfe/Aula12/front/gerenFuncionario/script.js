@@ -3,14 +3,15 @@ const linhaModelo = document.querySelector(".linhaModelo")
 const modalExcluir = document.querySelector(".excluir")
 const modalEditar = document.querySelector(".editar")
 
-const inputCodigo = document.querySelector("#codigo")
+const inputMatricula = document.querySelector("#matricula")
 const inputNome = document.querySelector("#nome")
-const inputquantidade = document.querySelector("#quantidade")
-const inputPreco = document.querySelector("#valor")
+const inputCargo = document.querySelector("#cargo")
+const inputSalario = document.querySelector("#salario")
+const inputCPF = document.querySelector("#cpf")
 
 const btnCadedit = document.querySelector("#cadedit")
 
-fetch("http://localhost:5000/produtos")
+fetch("http://localhost:5000/funcionario")
 .then(res => {return res.json()})
 .then(produtos => {
     produtos.forEach(produto => {
@@ -18,24 +19,26 @@ fetch("http://localhost:5000/produtos")
         linha.classList.remove("model")
 
         let colunas = linha.querySelectorAll("td")
-        colunas[0].innerHTML = produto.cod
+        colunas[0].innerHTML = produto.matricula
         colunas[1].innerHTML = produto.nome
-        colunas[2].innerHTML = produto.qntd
-        colunas[3].innerHTML = "R$ " + produto.preco
+        colunas[2].innerHTML = produto.cargo
+        colunas[3].innerHTML = "R$ " + produto.salario
+        colunas[4].innerHTML = produto.cpf
 
         linha.querySelector("#exclui").addEventListener("click", () => {
             modalExcluir.classList.remove("model")
-            modalExcluir.querySelector("#cod").innerHTML = produto.cod
+            modalExcluir.querySelector("#cod").innerHTML = produto.matricula
         })
 
         linha.querySelector("#edita").addEventListener("click", () => {
             modalEditar.classList.remove("model")
             btnCadedit.innerHTML = "Editar"
             btnCadedit.onclick = () => {editarProduto()}
-            inputCodigo.value = produto.cod
+            inputMatricula.value = produto.matricula
             inputNome.value = produto.nome
-            inputPreco.value = produto.preco
-            inputquantidade.value = produto.qntd
+            inputSalario.value = produto.cargo
+            inputCargo.value = produto.salario
+            inputCPF.value = produto.cpf
         })
 
         listaProdutos.appendChild(linha)
@@ -45,10 +48,11 @@ fetch("http://localhost:5000/produtos")
 function abrirModalCadastro(){
     btnCadedit.innerHTML = "Cadastrar"
     btnCadedit.onclick = () => {cadastroProduto()}
-    inputCodigo.value = ""
+    inputMatricula.value = ""
     inputNome.value = ""
-    inputPreco.value = ""
-    inputquantidade.value = ""
+    inputSalario.value = ""
+    inputCargo.value = ""
+    inputCPF.value = ""
     modalEditar.classList.remove("model")
 }
 
@@ -62,13 +66,14 @@ function fecharModalEditar(){
 
 function editarProduto(){
     let produto = {
-        "cod": inputCodigo.value,
+        "matricula": inputMatricula.value,
         "nome": inputNome.value,
-        "qntd": inputquantidade.value,
-        "preco": inputPreco.value
+        "cargo": inputCargo.value,
+        "salario": inputSalario.value,
+        "cpf": inputCPF.value
     }
 
-    fetch("http://localhost:5000/produtos", {
+    fetch("http://localhost:5000/funcionario", {
         "method":"PUT",
         "headers":{
             "Content-Type":"application/json"
@@ -77,11 +82,11 @@ function editarProduto(){
     })
     .then(res => {return res.json()})
     .then(resp => {
-        if(resp.cod !== undefined){
-            alert("Produto Alterado com Sucesso !")
+        if(resp.matricula !== undefined){
+            alert("Funcionário Alterado com Sucesso !")
             window.location.reload()
         } else{
-            alert("Não foi possivél editar o produto")
+            alert("Não foi possivél editar o funcionário")
         }
     })
 
@@ -89,10 +94,12 @@ function editarProduto(){
 
 function excluirProduto(){
     let data ={
-        "cod":document.querySelector("#cod").innerHTML
+        "matricula": document.querySelector("#cod").innerHTML
     }
 
-    fetch("http://localhost:5000/produtos", {
+    console.log(data)
+
+    fetch("http://localhost:5000/funcionario", {
         "method":"DELETE",
         "headers":{
             "Content-Type":"application/json"
@@ -102,23 +109,24 @@ function excluirProduto(){
     .then(res => {return res.json()})
     .then(resp => {
         if(resp !== undefined){
-            alert("Produto excluido com sucesso !")
+            alert("Funcionário excluido com sucesso !")
             window.location.reload()
         } else {
-            alert("Não foi possivél excluir o produto !")
+            alert("Não foi possivél excluir o funcionário !")
         }
     })
 }
 
 function cadastroProduto(){
     let produto = {
-        "cod": inputCodigo.value,
+        "matricula": inputMatricula.value,
         "nome": inputNome.value,
-        "qntd": inputquantidade.value,
-        "preco": inputPreco.value
+        "cargo": inputCargo.value,
+        "salario": inputSalario.value,
+        "cpf": inputCPF.value
     }
 
-    fetch("http://localhost:5000/produtos", {
+    fetch("http://localhost:5000/funcionario", {
         "method":"Post",
         "headers":{
             "Content-Type":"application/json"
@@ -127,7 +135,7 @@ function cadastroProduto(){
     })
     .then(res => {return res.json()})
     .then(resp => {
-        if(resp.cod !== undefined){
+        if(resp.matricula !== undefined){
             alert("Produto Cadastrado com Sucesso !")
             window.location.reload()
         } else{
