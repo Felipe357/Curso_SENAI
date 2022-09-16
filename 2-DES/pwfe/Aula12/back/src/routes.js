@@ -3,20 +3,22 @@ const Express = require('express');
 const router = Express.Router();
 
 const ProdutosController = require("./controllers/ProdutosController");
+const FuncionariosController = require("./controllers/FuncionariosController");
+const VendasController = require("./controllers/VendasController");
 
 router.get("/produtos", ProdutosController.listarProdutos);
-router.get("/produtos/:cod", ProdutosController.listaProduto);
+router.get("/produto/:cod", ProdutosController.listaProduto);
 router.post("/produtos", ProdutosController.cadastrarProduto);
-router.delete("/produtos", ProdutosController.excluirProduto);
-router.put("/produtos", ProdutosController.editarProduto);
+router.delete("/produto", ProdutosController.excluirProduto);
+router.put("/produto", ProdutosController.editarProduto);
 
-const funcionariController = require("./controllers/FuncionariosController");
+router.get("/funcionarios", FuncionariosController.listarFuncionarios);
+router.get("/funcionario/:matricula", FuncionariosController.listaFuncionario);
+router.post("/funcionarios", FuncionariosController.cadastrarFuncionario);
+router.delete("/funcionario", FuncionariosController.excluirFuncionario);
+router.put("/funcionario", FuncionariosController.editarFuncionario);
 
-router.get("/funcionario", funcionariController.listarFunc);
-router.get("/funcionario/:matricula", funcionariController.listaFunc);
-router.post("/funcionario", funcionariController.cadastrarFunc);
-router.delete("/funcionario", funcionariController.excluirFunc);
-router.put("/funcionario", funcionariController.editarFunc);
-
+router.post("/venda", VendasController.cadastrarVenda);
+router.get("/relatorioVendas", VendasController.relatorioVendas);
 
 module.exports = router;

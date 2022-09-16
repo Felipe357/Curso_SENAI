@@ -1,122 +1,116 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     display: flex;
 }
-aside{
+
+aside {
     width: 20vw;
     height: 100vh;
-    background-color: #368;
+    background-color: #add8e6;
 }
-ul{
+
+ul {
     list-style: none;
-    color: #000;
+    color: #666;
 }
-ul > li{
+
+ul > li {
     margin: 15px;
-    font-weight: bold
+    font-weight: bold;
 }
-main{
+
+main {
     width: 80vw;
     height: 100vh;
     padding: 15px;
 }
 
-.modal{
+.modal {
     display: flex;
     position: fixed;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.267);
+    background-color: rgba(0,0,0,.5);
     align-items: center;
     justify-content: center;
 }
 
 .modal-content {
-    width: 400px;
-    height: 300px;
-    background-color: #fff;
+    width: 350px;
+    background-color: #FFF;
     border-radius: 20px;
     position: relative;
     display: flex;
     flex-direction: column;
-    padding-top: 20px 40px;
+    padding: 20px 40px;
     justify-content: space-evenly;
 }
 
-.model{
+.model {
     display: none;
     visibility: hidden;
 }
 
-.modal-content > button{
+.modal-content > button {
     position: absolute;
     right: 0;
     top: 0;
     margin: 20px;
 }
 
-.modal-content-footer{
+.modal-content-footer {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     margin-top: 15px;
 }
 
-.modal-content-body{
+.modal-content-body {
     margin-top: 20px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
 }
 
-.btn{
+.confirm {
     padding: 10px 15px;
-}
-
-.confirma{
-    background-color: rgba(68, 136, 0, 0.527);
-    padding: 10px 15px;
-    color: #fff;
+    color: white;
     border-radius: 5px;
+    background-color: #2fd659;
 }
 
-.cancel{
-    background-color: rgba(153, 1, 1, 0.596);
+.cancel {
     padding: 10px 15px;
-    color: #fff;
+    color: white;
     border-radius: 5px;
+    background-color: #fa2828; 
 }
 
-input{
+input {
     width: 100%;
-    border: 1px solid rgb(79, 106, 124);
+    border: 1px solid gray;
     border-radius: 5px;
     outline: none;
     padding: 5px 10px;
     margin-top: 10px;
 }
 
-.cadastrar{
+.cadastrar {
     display: flex;
     align-items: center;
-    justify-content: space-around;
     padding: 10px 15px;
     border-radius: 5px;
-    border: 1px solid #368;
-    height: 40px;
-    width: 120px;
+    border: 1px solid #2fd659;
+    margin-bottom: 20px;
 }
 
-.cadastrar:hover{
-    color:#fff;
-    background-color: #368;
+.cadastrar:hover {
+    color:  #fff;
+    background-color: #2fd659;
 }
 
-.cadastrar>img{
+.cadastrar > img {
     margin-left: 10px;
 }

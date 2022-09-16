@@ -1,25 +1,40 @@
-drop database if exists lojinha;
-create database lojinha charset=UTF8 collate utf8_general_ci;
-use lojinha;
+DROP DATABASE IF EXISTS lojinha;
+CREATE DATABASE lojinha charset=UTF8 collate utf8_general_ci;
 
-create table produtos(
-    id integer not null primary key auto_increment,
-    cod VARCHAR(10) not null,
+USE lojinha;
+
+CREATE TABLE produtos (
+    id INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    cod VARCHAR(10) NOT NULL UNIQUE,
     nome VARCHAR(50) NOT NULL,
     qntd INTEGER NOT NULL,
-    preco FLOAT(5, 2) NOT NULL
+    preco FLOAT(5, 2) NOT NULL 
 );
 
-create table funcionario (
-    id integer auto_increment not null primary key,
-    matricula VARCHAR(10) not null unique,
-    nome VARCHAR(153) not null,
-    cargo VARCHAR(50) not null,
-    salario FLOAT(6, 2) not null,
-    cpf VARCHAR(11) not null
+CREATE TABLE funcionarios (
+    id INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    matricula VARCHAR(10) NOT NULL UNIQUE,
+    nome VARCHAR(153) NOT NULL,
+    cargo VARCHAR(50) NOT NULL,
+    salario FLOAT(6, 2) NOT NULL,
+    cpf VARCHAR(11) NOT NULL
 );
 
-insert into produtos values (default, 'CJ1234', 'Calça Jeans Super Confortável', 10, 90.00);
-insert into produtos values (default, 'MO5432', 'Moletom 1000 cedas de aranha', 5, 50.00);
+CREATE TABLE vendas (
+    id INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    id_func INTEGER NOT NULL,
+    id_prod INTEGER NOT NULL,
+    qntd INTEGER NOT NULL,
+    data TIMESTAMP NOT NULL,
+    FOREIGN KEY (id_func) REFERENCES funcionarios (id),
+    FOREIGN KEY (id_prod) REFERENCES produtos (id)
+);
 
-insert into funcionario values (default, 'SP1234', 'José Astolfo', 'Gerente', 5300.00, '72704721068');
+INSERT INTO produtos VALUES (DEFAULT, 'CJ1234', 'Calça Jeans Super Confortável', 10, 90.00);
+INSERT INTO produtos VALUES (DEFAULT, 'MO5214', 'Moletom Super Descolado', 5, 120.00);
+
+INSERT INTO funcionarios VALUES (DEFAULT, 'SP1234', 'José Roberto', 'Gerente', 5320.00, '72704721068');
+INSERT INTO funcionarios VALUES (DEFAULT, 'SP1245', 'Carlos Alberto', 'Vendedor', 2530.00, '70601631072');
+
+INSERT INTO vendas VALUES (DEFAULT, 2, 1, 2, DEFAULT);
+INSERT INTO vendas VALUES (DEFAULT, 1, 2, 1, DEFAULT);
