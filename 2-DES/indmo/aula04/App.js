@@ -12,7 +12,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Restaurante" component={telaRestaurante} />
-        <Stack.Screen name="telaInfo" component={telaInfo} />
+        <Stack.Screen style name="telaInfo" component={telaInfo} />
       </Stack.Navigator>
     </NavigationContainer>
   );

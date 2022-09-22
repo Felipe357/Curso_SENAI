@@ -3,10 +3,12 @@ import { Button, Image, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpa
 import { TextInput } from 'react-native-web';
 import { useState } from 'react';
 
-export default function telaInfo({ route }) {
+export default function telaInfo({ route , navigation}) {
     var { descricao } = route.params
+    navigation.setOptions({"title": descricao.nomeRes})
     return (
         <View style={styles.v}>
+            <StatusBar barStyle='light-content' backgroundColor='#0000ff'/>
             <View style={styles.v2}>
                 <Image
                     style={styles.tinyLogo}
@@ -31,7 +33,7 @@ const styles = StyleSheet.create({
         justifyContent: "flex-start",
         alignItems: "center",
         paddingTop: 80,
-        backgroundColor: "#bdf1ff"
+        backgroundColor: "#777777"
     },
     v2: {
         height: "50%",
@@ -42,7 +44,16 @@ const styles = StyleSheet.create({
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        borderRadius: 20
+        borderRadius: 20,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 10,
+            height: 10,
+        },
+        shadowOpacity: 1.0,
+        shadowRadius: 8.30,
+
+        elevation: 13,
     },
     tinyLogo: {
         width: 200,

@@ -10,37 +10,37 @@ export default function telaRestaurante({ navigation }) {
             "nomeRes": "Du Chef",
             "avaliacao": 4.3,
             "descricao": {
-                "img": "https://img.freepik.com/premium-vector/chef-restaurant-logo-inspiration_139869-449.jpg?w=2000",
-                "end": "Santo Antônio de Posse",
+                "img": "https://scontent-gru1-2.xx.fbcdn.net/v/t1.6435-9/125216467_2690260301303693_4408456013494873207_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=2UHUpW4ltjMAX91QljI&_nc_ht=scontent-gru1-2.xx&oh=00_AT9Dj0QLTZLGOPQ94UnwGkTxLSEfb-j6c7jPNi-ys8Y7YA&oe=6350ABBC",
+                "end": "Holambra",
                 "telefone": "19989030956"
             }
         },
         {
-            "nomeRes": "Premium",
+            "nomeRes": "Carnívoros",
             "avaliacao": 4.4,
             "descricao": {
-                "img": "https://img.freepik.com/premium-vector/restaurant-logo-design-template_79169-56.jpg?w=2000",
-                "end": "Pedreira",
+                "img": "https://files.menudino.com/cardapios/16138/logo.png",
+                "end": "Mogi guaçu",
                 "telefone": "19995778086"
             }
         },
         {
-            "nomeRes": "Drinks BG",
+            "nomeRes": "Na Lenha",
             "avaliacao": 3.9,
             "descricao": {
-                "img": "https://media.istockphoto.com/vectors/restaurant-food-drinks-logo-fork-knife-background-vector-image-vector-id981368726?k=20&m=981368726&s=612x612&w=0&h=Um4YOExWlUgOfpUs2spnN0NrrXs-M71OUuUMbStVFNQ=",
+                "img": "https://scontent-gru2-2.xx.fbcdn.net/v/t39.30808-1/305205704_550856957039456_4143841505908483686_n.jpg?stp=dst-jpg_p200x200&_nc_cat=105&ccb=1-7&_nc_sid=c6021c&_nc_ohc=DVkekAhizeUAX9Bb7VR&_nc_ht=scontent-gru2-2.xx&oh=00_AT8uOHRvwYtkAi_qyeFI17cmI40_5_iAc09_e7W2Nk4VRQ&oe=63323BF7",
                 "end": "Jaguariúna",
                 "telefone": "19993120806"
             }
         }
-    ]
+    ] 
 
     return (
         <View style={styles.v}>
             {
                 produtos.map((produto, indice) => {
                     return (
-                        <TouchableOpacity style={styles.infoRes} key={indice} onPress={() => { navigation.navigate("telaInfo", { "descricao": produto.descricao }) }}>
+                        <TouchableOpacity style={styles.infoRes} key={indice} onPress={() => { navigation.navigate("telaInfo", {"descricao":{  ...produto.descricao, "nomeRes": produto.nomeRes }, }) }}>
                             <Text style={styles.text}>{produto.nomeRes}</Text>
                             <Text style={styles.text}>
                                 {produto.avaliacao}
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
         justifyContent: "space-around",
         flexDirection: "column",
         alignItems: "center",
-        backgroundColor: "#87cefa"
+        backgroundColor: "#d0d0d0"
     },
     tinyLogo: {
         width: 15,
