@@ -3,6 +3,9 @@ import { Button, Image, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpa
 import { TextInput } from 'react-native-web';
 import { useState } from 'react';
 
+import chamado from '../../comps/itenHome'
+import Chamado from '../../comps/itenHome';
+
 export default function telaHome({ route }) {
     var id = route.params
 
@@ -48,14 +51,11 @@ export default function telaHome({ route }) {
     return (
         <View style={styles.v}>
             {
-                chamados.map(c => {
+                chamados.map((c, indice) => {
                     if (c.user_id == id.id) {
-                        console.log("tchanes")
+
                         return (
-                            <View style={styles.chamado}>
-                                <Text style={styles.t}>{c.chamados.titulo}</Text>
-                                <Text style={styles.d}>{c.chamados.descricao}</Text>
-                            </View>
+                            <Chamado key={indice} ch={c}/>
                         )
                     }
                 })
@@ -74,20 +74,5 @@ const styles = StyleSheet.create({
         paddingTop: 80,
         backgroundColor: "#fff"
     },
-    chamado: {
-        width: 250,
-        height: 50,
-        borderWidth: 2,
-        borderColor: "#7242F5",
-        display: "flex",
-        justifyContent: "center",
-        padding: 20
-    },
-    t: {
-        fontSize: 40,
-        fontWeight: "bold"
-    },
-    d: {
-        fontSize: 45
-    }
+    
 });
