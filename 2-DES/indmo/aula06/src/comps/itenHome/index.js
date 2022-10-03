@@ -6,15 +6,13 @@ export default function Chamado(props) {
     console.log(ch)
 
     return (
-        ch.chamados.map(c => {
-            return (
-                <View style={styles.chamado}>
-                    <Text style={styles.t}>{c.titulo}</Text>
-                    <Text style={styles.d}>{c.descricao}</Text>
-                </View>
-            )
 
-        })
+
+                <View style={styles.chamado}>
+                    <Text style={styles.t}>{ch.titulo}</Text>
+                    <Text style={styles.d}>{ch.descricao}</Text>
+                </View>
+            
     )
 }
 
