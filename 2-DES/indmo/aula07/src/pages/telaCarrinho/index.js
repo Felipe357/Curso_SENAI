@@ -5,7 +5,7 @@ import { useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
-import PizzaComp from '../../components/pizzaComp'
+
 
 export default function Carrinho({ route }) {
 
@@ -17,9 +17,10 @@ export default function Carrinho({ route }) {
             const data = await AsyncStorage.getItem('pizza')
             console.log(data)
             var d = data != null ? JSON.parse(data) : null
-            setLida(
+            console.log(d)
+            return (
                 <View>
-                    <Text>{d.nome}</Text>
+                    <Text>{d[0].nome}</Text>
                     <Text>{d.desc}</Text>
                     <Text>{d.img}</Text>
                 </View>

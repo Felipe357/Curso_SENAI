@@ -2,13 +2,28 @@ import { StatusBar } from 'expo-status-bar';
 import { Button, Image, StyleSheet, Text, TextInput, Touchable, TouchableOpacity, View } from 'react-native';
 import { useState } from 'react';
 
-
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import PizzaComp from '../../components/pizzaComp'
 
 export default function Pizzas({ navigation }) {
 
+
+    var cart = []
+
+    function saveData(e) {
+        cart.push(e)
+        console.log(cart)
+    }
+
+    // function saveData() {
+
+    //     cart.push({
+    //       pizza
+    //   })
+
+    //     AsyncStorage.setItem('pizza', JSON.stringify(cart));
+    //   }
 
 
 
@@ -77,7 +92,7 @@ export default function Pizzas({ navigation }) {
 
 
 
-    
+
 
 
 
@@ -99,9 +114,16 @@ export default function Pizzas({ navigation }) {
             {
                 pizzas.map((pi, indice) => {
                     return (
-                        <PizzaComp 
-                        key={indice} 
-                        pizza={pi} ></PizzaComp>
+                        <View>
+                            <PizzaComp
+                                key={indice}
+                                pizza={pi} 
+                                onClick={() => saveData(pi)}>
+                                
+                            </PizzaComp>
+
+                        </View>
+
                     )
                 })
             }
