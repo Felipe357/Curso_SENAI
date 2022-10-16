@@ -1,0 +1,95 @@
+--------------------cadastrar
+
+
+function cadastroProduto(){
+    let produto = {
+        "cod": inputCodigo.value,
+        "nome": inputNome.value,
+        "qntd": inputquantidade.value,
+        "preco": inputPreco.value
+    }
+
+    fetch("http://localhost:5000/produtos", {
+        "method":"Post",
+        "headers":{
+            "Content-Type":"application/json"
+        },
+        "body":JSON.stringify(produto)
+    })
+    .then(res => {return res.json()})
+    .then(resp => {
+        if(resp.cod !== undefined){
+            alert("Produto Cadastrado com Sucesso !")
+            window.location.reload()
+        } else{
+            alert("Não foi possivél cadastrar o produto")
+        }
+    })
+}
+
+
+
+--------------------editar
+
+function editarProduto(){
+    let produto = {
+        "cod": inputCodigo.value,
+        "nome": inputNome.value,
+        "qntd": inputquantidade.value,
+        "preco": inputPreco.value
+    }
+
+    fetch("http://localhost:5000/produtos", {
+        "method":"PUT",
+        "headers":{
+            "Content-Type":"application/json"
+        },
+        "body":JSON.stringify(produto)
+    })
+    .then(res => {return res.json()})
+    .then(resp => {
+        if(resp.cod !== undefined){
+            alert("Produto Alterado com Sucesso !")
+            window.location.reload()
+        } else{
+            alert("Não foi possivél editar o produto")
+        }
+    })
+
+}
+
+-----------------------buscar
+
+function buscaFunc(e) {
+    fetch("http://localhost:3000/funcionario/" + e.value)
+    .then(res => { return res.json() })
+    .then(data => {
+        idFunc.value = data[0].id;
+        nomeFunc.value = data[0].nome;
+    })
+}
+
+----------------------deletar
+
+function excluirProduto(){
+    let data ={
+        "cod":document.querySelector("#cod").innerHTML
+    }
+
+    fetch("http://localhost:5000/produtos", {
+        "method":"DELETE",
+        "headers":{
+            "Content-Type":"application/json"
+        },
+        "body":JSON.stringify(data)
+    })
+    .then(res => {return res.json()})
+    .then(resp => {
+        if(resp !== undefined){
+            alert("Produto excluido com sucesso !")
+            window.location.reload()
+        } else {
+            alert("Não foi possivél excluir o produto !")
+        }
+    })
+}
