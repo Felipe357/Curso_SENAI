@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    background-color: #04558A;
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pages{
+    height: 100%;
+    width: 10%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #fff;
+}
+
+.info{
+    height: 100%;
+    width: 10%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #fff;
+}
+
+#img{
+    height: 50px;
+    width: 50px;
+}
+
+main{
+    height: 90vh;
+    width: 100vw;
+    padding: 100px;
+    background-color: #0182B0;
+    color: #fff;
+}
+
+.titulo{
+    height: 80px;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.novidades{
+    padding-left: 30px;
+}
+
+.nov{
+    height: 60px;
+    font-size: 20px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+a{
+    color: #fff;
+    width: 100px;
+}
