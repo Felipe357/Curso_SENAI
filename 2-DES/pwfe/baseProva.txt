@@ -93,3 +93,46 @@ function excluirProduto(){
         }
     })
 }
+
+------------------------cadastrar
+
+function carregarDep() {
+    fetch("http://localhost:3000/departamento/read")
+        .then(res => { return res.json() })
+        .then(departamentos => {
+            departamentos.forEach(dep => {
+
+                console.log(dep)
+
+                let linha = document.createElement("tr")
+
+                let coluna = document.createElement("td")
+                coluna.innerHTML = dep.Cod_Depto
+
+                let coluna2 = document.createElement("td")
+                coluna2.innerHTML = dep.Nome_Depto
+
+                let coluna3 = document.createElement("td")
+                let btn = document.createElement("button")
+                var img = document.createElement("IMG");
+                img.src = "https://cdn-icons-png.flaticon.com/512/4371/4371178.png";
+                img.style.width = "30px";
+                img.style.height = "30px";
+                btn.appendChild(img);
+                btn.addEventListener('click', () => excluir())
+                btn.classList.add("btn")
+                btn.value = dep.Cod_Depto
+                coluna3.appendChild(btn)
+
+                linha.appendChild(coluna)
+                linha.appendChild(coluna2)
+                linha.appendChild(coluna3)
+
+                console.log(linha)
+
+                document.querySelector("#read").appendChild(linha)
+
+            })
+
+        })
+}
