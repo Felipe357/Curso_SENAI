@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu';
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+header {
+    width: 100vw;
+    height: 10vh;
+    background-color: #71DFBE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header>span {
+    font-size: 40pt;
+    font-weight: bolder;
+}
+
+main {
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1D1F20;
+}
+
+.cadastro {
+    height: 60vh;
+    width: 50vw;
+    border-right: 4px solid #343738;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    height: 70%;
+    width: 40%;
+    background-color: #6d6d6d;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+
+#nome {
+    height: 10%;
+    width: 70%;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #71DFBE;
+    padding: 15px;
+}
+
+::placeholder {
+    color: #ffffff;
+    font-weight: bolder;
+}
+
+.inpFile {
+    height: 40%;
+    width: 80%;
+    background-color: #363636;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px dashed #71DFBE;
+    color: #ffffff;
+}
+
+#file {
+    visibility: hidden;
+    display: none;
+}
+
+.btn-12 {
+    text-align: center;
+    display: inline-block;
+    padding: 15px 40px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 20px;
+    background: none;
+    border: none;
+    font-weight: 900;
+    font-size: 15pt;
+}
+
+.btn-12:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    background: #71DFBE;
+    left: 45%;
+    height: 2px;
+    bottom: 0;
+    transition: all .3s;
+    opacity: 0.7;
+}
+
+.btn-12:hover:before {
+    width: 100%;
+    left: 0;
+}
+
+
+.users {
+    height: 60vh;
+    width: 50vw;
+    display: flex;
+    padding: 50px;
+    flex-wrap:wrap;
+    gap: 5%
+}
+
+.user {
+    background-color: #363636;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 15%;
+    width: 40%;
+    border-radius: 20px;
+}
+
+#img{
+    height: 70%;
+    border-radius: 50%;
+}
