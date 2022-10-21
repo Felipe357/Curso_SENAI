@@ -8,39 +8,23 @@
     <link rel="stylesheet" href="./style.css">
     <title>Document</title>
 </head>
-<body>
+<body onload="carregar()">
     <header>
         <span>Usuários</span>
     </header>
     <main>
         <div class="cadastro">
-            <div class="card">
-                <input type="text" placeholder="Nome..." id="nome">
+            <form action="http://localhost:5000/blobs/cadastros" method="post" enctype="multipart/form-data" id="form" class="card">
+                <input type="text" placeholder="Nome..." id="nome" name="nome">
                 <div class="inpFile" onclick="document.querySelector('#file').click()">
-                    <span>Arraste sua foto aqui</span>
+                    <span>Click para adicionar sua foto</span>
                 </div>
-                <input type="file" id="file">
-                <button id="Cadastrar" class="btn-12">Cadastrar</button>
-            </div>
+                <input type="file" id="file" name="foto" onchange="inputChangou(this)">
+                <button id="Cadastrar" type="submit" class="btn-12">Cadastrar</button>
+            </form>
         </div>
         <div class="users">
-            <div class="user">
-                <span id="user">Nome do Bostinha</span>
-                <img src="https://cdn-icons-png.flaticon.com/512/1621/1621561.png" alt="pessoa" id="img">
-            </div>
-            <div class="user">
-                <span id="user">Nome do Bostinha</span>
-                <img src="https://cdn-icons-png.flaticon.com/512/1621/1621561.png" alt="pessoa" id="img">
-            </div>
-            <div class="user">
-                <span id="user">Nome do Bostinha</span>
-                <img src="https://cdn-icons-png.flaticon.com/512/1621/1621561.png" alt="pessoa" id="img">
-            </div>
-            <div class="user">
-                <span id="user">Nome do Bostinha</span>
-                <img src="https://cdn-icons-png.flaticon.com/512/1621/1621561.png" alt="pessoa" id="img">
-            </div>
-            <div class="user">
+            <div class="user model">
                 <span id="user">Nome do Bostinha</span>
                 <img src="https://cdn-icons-png.flaticon.com/512/1621/1621561.png" alt="pessoa" id="img">
             </div>
