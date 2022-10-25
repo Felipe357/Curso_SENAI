@@ -6,15 +6,24 @@ import * as React from 'react';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-export default function Pergunta01({ navigation }) {
+export default function Pergunta05({ navigation }) {
     const [value, setValue] = React.useState('');
-    
-    var resp = []
-
-    function saveData() {
-        resp .push(value)
-        AsyncStorage.setItem('Pergunta', JSON.stringify(resp));
+    var resp
+    const ler = async () => {
+        try {
+            const data = await AsyncStorage.getItem('Pergunta')
+            console.log(data)
+            var d = data != null ? JSON.parse(data) : null
+            resp = d
+            resp.push(value)
+            console.log(resp)
+            AsyncStorage.setItem('Pergunta', JSON.stringify(resp));
+        } catch (err) {
+            console.log(err)
+        }
     }
+
+    
 
     return (
         <View style={styles.container}>
@@ -24,16 +33,16 @@ export default function Pergunta01({ navigation }) {
             </View>
 
             <View>
-                <Text style={styles.pergunta}>Qual a cor de uma azeitona?</Text>
+                <Text style={styles.pergunta}>Numa sala de cinema, qual é o apoio de braço que pertence ao nosso assento? </Text>
                 <View>
                     <RadioButton.Group onValueChange={value => setValue(value)} value={value}>
-                        <RadioButton.Item label="Preta" value="E" />
-                        <RadioButton.Item label="Verde" value="F" />
+                        <RadioButton.Item label="Direito" value="E" />
+                        <RadioButton.Item label="Esquerdo" value="F" />
                     </RadioButton.Group>
                 </View>
             </View>
 
-            <TouchableOpacity style={styles.continuar} onPress={() => { navigation.navigate("Pergunta02"); saveData() }}><Text>Começar</Text></TouchableOpacity>
+            <TouchableOpacity style={styles.continuar} onPress={() => { navigation.navigate("Pergunta05"); ler()  }}><Text>Começar</Text></TouchableOpacity>
 
         </View>
     );
