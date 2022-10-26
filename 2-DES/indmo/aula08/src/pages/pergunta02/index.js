@@ -12,11 +12,9 @@ export default function Pergunta02({ navigation }) {
     const ler = async () => {
         try {
             const data = await AsyncStorage.getItem('Pergunta')
-            console.log(data)
             var d = data != null ? JSON.parse(data) : null
             resp = d
             resp.push(value)
-            console.log(resp)
             AsyncStorage.setItem('Pergunta', JSON.stringify(resp));
         } catch (err) {
             console.log(err)
@@ -36,13 +34,13 @@ export default function Pergunta02({ navigation }) {
                 <Text style={styles.pergunta}>Laranja fruta ou cor?</Text>
                 <View>
                     <RadioButton.Group onValueChange={value => setValue(value)} value={value}>
-                        <RadioButton.Item label="Fruta" value="E" />
-                        <RadioButton.Item label="Cor" value="F" />
+                        <RadioButton.Item label="Fruta" value="F" />
+                        <RadioButton.Item label="Cor" value="E" />
                     </RadioButton.Group>
                 </View>
             </View>
 
-            <TouchableOpacity style={styles.continuar} onPress={() => { navigation.navigate("Pergunta03"); ler()  }}><Text>Começar</Text></TouchableOpacity>
+            <TouchableOpacity style={styles.continuar} onPress={() => { navigation.navigate("Pergunta03"); ler()  }}><Text>Próximo</Text></TouchableOpacity>
 
         </View>
     );

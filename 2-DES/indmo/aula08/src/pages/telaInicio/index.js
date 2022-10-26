@@ -1,46 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import { Button, Image, StyleSheet, Text, TextInput, Touchable, TouchableOpacity, View } from 'react-native';
-import { useState } from 'react';
-
-import AsyncStorage from '@react-native-async-storage/async-storage';
-
-export default function Pergunta01({ navigation }) {
 
 
-    // var cart = []
+export default function Inicio({ navigation }) {
 
-    // function saveData(e) {
-    //     cart.push(e)
-    //     console.log(cart)
-    // }
-
-    // function saveData() {
-
-    //     cart.push({
-    //       pizza
-    //   })
-
-    //     AsyncStorage.setItem('pizza', JSON.stringify(cart));
-    //   }
-
-
-
-    // const ler = async () => {
-    //   try {
-    //     const data = await AsyncStorage.getItem('data')
-    //     console.log(data)
-    //     var d = data != null ? JSON.parse(data) : null
-    //     setLida(
-    //       <View>
-    //         <Text>{d.info1}</Text>
-    //         <Text>{d.info2}</Text>
-    //         <Text>{d.info3}</Text>
-    //       </View>
-    //     )
-    //   } catch(err) {
-    //     console.log(err)
-    //   }
-    // }
 
     return (
         <View style={styles.container}>

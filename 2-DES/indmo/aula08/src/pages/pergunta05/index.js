@@ -24,6 +24,7 @@ export default function Pergunta05({ navigation }) {
     }
 
     
+    
 
     return (
         <View style={styles.container}>
@@ -33,16 +34,16 @@ export default function Pergunta05({ navigation }) {
             </View>
 
             <View>
-                <Text style={styles.pergunta}>Numa sala de cinema, qual é o apoio de braço que pertence ao nosso assento? </Text>
+                <Text style={styles.pergunta}>Qual o sinônimo de sinônimo?</Text>
                 <View>
                     <RadioButton.Group onValueChange={value => setValue(value)} value={value}>
-                        <RadioButton.Item label="Direito" value="E" />
-                        <RadioButton.Item label="Esquerdo" value="F" />
+                        <RadioButton.Item label="Sinonímias" value="F" />
+                        <RadioButton.Item label="Sinonimias" value="E" />
                     </RadioButton.Group>
                 </View>
             </View>
 
-            <TouchableOpacity style={styles.continuar} onPress={() => { navigation.navigate("Pergunta05"); ler()  }}><Text>Começar</Text></TouchableOpacity>
+            <TouchableOpacity style={styles.continuar} onPress={() => { navigation.navigate("Resposta"); ler()  }}><Text>Próximo</Text></TouchableOpacity>
 
         </View>
     );

@@ -1,27 +1,37 @@
 import { StatusBar } from 'expo-status-bar';
 import { Button, Image, StyleSheet, Text, TextInput, Touchable, TouchableOpacity, View } from 'react-native';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { RadioButton } from 'react-native-paper';
 import * as React from 'react';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-export default function Pergunta03({ navigation }) {
-    const [value, setValue] = React.useState('');
+export default function Resposta({ navigation }) {
+
+    const [onLoadText, setText] = useState("");
+
     var resp
+    var re = []
     const ler = async () => {
         try {
             const data = await AsyncStorage.getItem('Pergunta')
             var d = data != null ? JSON.parse(data) : null
             resp = d
-            resp.push(value)
-            AsyncStorage.setItem('Pergunta', JSON.stringify(resp));
+
+            resp.forEach(r => {
+                if (r == "E") {
+                    re.push(r)
+                    setText(re.length)
+                }
+            })
         } catch (err) {
             console.log(err)
         }
     }
 
-    
+    useEffect(() => {
+        ler()
+    },[])
 
     return (
         <View style={styles.container}>
@@ -31,17 +41,17 @@ export default function Pergunta03({ navigation }) {
             </View>
 
             <View>
-                <Text style={styles.pergunta}>Loja 24h possui fechadura?</Text>
+                <Text style={styles.pergunta}>Parabéns</Text>
                 <View>
-                    <RadioButton.Group onValueChange={value => setValue(value)} value={value}>
-                        <RadioButton.Item label="Sim" value="E" />
-                        <RadioButton.Item label="Não" value="F" />
-                    </RadioButton.Group>
+                    <Text>Você acertou {onLoadText}</Text>
                 </View>
             </View>
 
-            <TouchableOpacity style={styles.continuar} onPress={() => { navigation.navigate("Pergunta04"); ler()  }}><Text>Próximo</Text></TouchableOpacity>
-
+            <TouchableOpacity style={styles.continuar} onPress={() => { 
+                
+                 navigation.navigate("Quiz")
+                }}><Text>Começar</Text></TouchableOpacity>
+            
         </View>
     );
 }

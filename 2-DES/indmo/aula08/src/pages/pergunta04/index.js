@@ -12,11 +12,11 @@ export default function Pergunta04({ navigation }) {
     const ler = async () => {
         try {
             const data = await AsyncStorage.getItem('Pergunta')
-            console.log(data)
+            
             var d = data != null ? JSON.parse(data) : null
             resp = d
             resp.push(value)
-            console.log(resp)
+            
             AsyncStorage.setItem('Pergunta', JSON.stringify(resp));
         } catch (err) {
             console.log(err)
@@ -42,7 +42,10 @@ export default function Pergunta04({ navigation }) {
                 </View>
             </View>
 
-            <TouchableOpacity style={styles.continuar} onPress={() => { navigation.navigate("Pergunta05"); ler()  }}><Text>Começar</Text></TouchableOpacity>
+            <TouchableOpacity style={styles.continuar} onPress={() => { 
+                navigation.navigate("Pergunta05")
+                ler()
+                }}><Text>Próximo</Text></TouchableOpacity>
 
         </View>
     );

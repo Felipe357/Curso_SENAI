@@ -27,13 +27,13 @@ export default function Pergunta01({ navigation }) {
                 <Text style={styles.pergunta}>Qual a cor de uma azeitona?</Text>
                 <View>
                     <RadioButton.Group onValueChange={value => setValue(value)} value={value}>
-                        <RadioButton.Item label="Preta" value="E" />
-                        <RadioButton.Item label="Verde" value="F" />
+                        <RadioButton.Item label="Preta" value="F" />
+                        <RadioButton.Item label="Verde" value="E" />
                     </RadioButton.Group>
                 </View>
             </View>
 
-            <TouchableOpacity style={styles.continuar} onPress={() => { navigation.navigate("Pergunta02"); saveData() }}><Text>Começar</Text></TouchableOpacity>
+            <TouchableOpacity style={styles.continuar} onPress={() => { navigation.navigate("Pergunta02"); saveData() }}><Text>Próximo</Text></TouchableOpacity>
 
         </View>
     );
