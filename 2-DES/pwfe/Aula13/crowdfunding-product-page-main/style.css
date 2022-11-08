@@ -188,3 +188,8 @@ header>.info {
     color: hsl(0, 0%, 48%);
     margin-bottom: 40px;
 }
+
+.stand {
+    border: 1px solid hsla(0, 0%, 48%, 0.582);
+    border-radius: 10px;
+}
