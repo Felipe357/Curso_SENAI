@@ -275,3 +275,25 @@ header>.info {
     color: hsl(0, 0%, 100%);
     font-weight: 700;
 }
+
+#titulo2{
+    font-size: 15pt;
+    font-weight: 700;
+    color: hsl(0, 0%, 56%);
+    margin: 0;
+}
+
+#valor2{
+    font-size: 13pt;
+    font-weight: 500;
+    color: hsl(176, 35%, 68%);
+    margin: 0;
+}
+
+#vLeft{
+    color: hsl(0, 0%, 56%);
+}
+
+#off{
+    color: hsl(0, 0%, 67%);
+}
