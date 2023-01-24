@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Gestão de Entregas</title>
+</head>
+<body>
+    <header>
+        <span>Gestão de Entregas</span>
+        <img src="./img/fast-food-delivery-12982.png" alt="hominho de motoca">
+    </header>
+    <main>
+        <div class="cad-etr">
+            <div class="cli">
+                <span>Cliente:</span>
+                <input type="text" placeholder="Nome">
+            </div>
+            <div class="end">
+                <span>Endereço:</span>
+                <input type="text" placeholder="Endereço">
+            </div>
+            <div class="prod">
+                <span>Produtos:</span>
+                <input type="text" placeholder="Produto">
+            </div>
+            <div class="env">
+                <button><span>Gerar Pedido</span></button>
+            </div>
+        </div>
+
+        <div class="lista">
+            <div class="lista-cozinha">
+                <div class="pedido">
+                    <div class="info">
+                        <div class="id">
+                            <span>Id: <span id="id">0101</span></span>
+                        </div>
+                        <div class="cliente">
+                            <span>Cliente: <span id="cli">Santiago</span></span>
+                        </div>
+                    </div>
+
+                    <div class="endereco">
+                        <span>Endereço: <span id="end">Ettsts</span></span>
+                    </div>
+
+                    <div class="Produto">
+                        <span>Produto: <span id="prod">Churras</span></span>
+                    </div>
+
+                    <div class="time">
+                        <div class="horario">
+                            <span>Horario: <span id="hora">20:20</span></span>
+                        </div>
+                        <div class="data">
+                            <span>Data: <span id="data">20/08</span></span>
+                        </div>1
+                    </div>
+
+                </div>
+                
+            </div>
+
+            <div class="lista-entrega"></div>
+        </div>
+    </main>
+</body>
+<script src="./script.js"></script>
+</html>

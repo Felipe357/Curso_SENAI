@@ -44,16 +44,33 @@ Create table Itens_Solicitacao(
 );
 
 create view vw_Teste as
-select s.Num_Sol, s.Data_sol, d.Cod_Depto, d.Nome_Depto, f.Cod_Func, f.Nome_Func, p.Nome_produto, p.Nome_produto, i.Cod_Produto, p.Nome_produto, i.Qtde, i.Valor from Solicitacoes s
+select s.Num_Sol, s.Data_sol, d.Cod_Depto, d.Nome_Depto, f.Cod_Func, f.Nome_Func, i.Cod_Produto, p.Nome_produto, i.Qtde, i.Valor from Solicitacoes s
 inner join Departamentos d
 on s.Cod_Depto = d.Cod_Depto
 inner join Funcionarios f
 on s.Cod_Func = f.Cod_Func
 inner join Itens_Solicitacao i
-on s.Num_Sol = i.Num_Sol,
+on s.Num_Sol = i.Num_Sol
 inner join Produtos p
-on i.Cod_produto = p.Cod_Produto 
-order by Num_Sol DESC;
+on i.Cod_Produto = p.Cod_Produto order by s.Num_Sol DESC;
+
+drop procedure if exists solicita_um_item();
+delimiter //
+create procedure solicita_um_item(n_Sol int,depto int,func int, prod int, qtd int, total int)
+begin
+	insert into Solicitacoes value(n_Sol, curdate(), depto, func);
+	set @preco = ((select Valor from Itens_Solicitacao where Cod_Produto = prod) * qtd);
+    insert into Itens_Solicitacao value(n_Sol, prod, qtd, @preco )
+end //
+delimiter ;
+
+
+select Nome_produto from vw_Teste where Data_sol like "%2022-02%";
+select Nome_Depto from vw_Teste where Nome_produto like "%Para%" or Nome_produto like "%Dif%";
+
+select SUM(Valor) as Soma from vw_Teste group by Cod_Func order by Soma desc limit 1;
+
+
 
 -- OBS Na tabela Itens_Solicitacao a chave primária é uma chave "COMPOSTA" por (Num_Sol, cod_produto)
 
