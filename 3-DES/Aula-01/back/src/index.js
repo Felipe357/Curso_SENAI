@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 
-const itens = require('./src/routes/itens.routes.js');
+const itens = require('./routes/routes');
 
 const app = express();
 app.use(express.json());

@@ -106,21 +106,80 @@ main {
 .lista-cozinha, .lista-entrega {
     height: 100%;
     width: 48%;
-    background-color: #c2c1c1;
     display: flex;
     align-items: center;
     flex-direction: column;
     padding-top: 20px;
     gap: 40px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgba(224, 7, 7, 0);
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #fbfcfb;
+    border-radius: 10px;
 }
 
 .pedido {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: #88eed0;
+    height: 130px;
+    width: 80%;
+    padding: 10px;
+    padding-right: 120px;
+    border-radius: 10px;
+    border: 1px solid #686969;
+    position: relative;
+}
+
+.img {
+    height: 100%;
+    width: 60px;
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img>button {
+    height: 60%;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    background: none;
+    border: none;
+}
+
+.img>img {
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    right: 0px;
+    transition: rotate 1.5s, right 5s;
 }
 
 .info, .time {
     display: flex;
     justify-content: space-between;
+}
+
+.model {
+    display: none!important;
+    visibility: hidden;
 }

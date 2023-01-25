@@ -4,7 +4,7 @@ const con = require('../models/entregasDAO');
 const cadastrarPedidos = (req, res) => {
     con.query(Item.toCreate(req.body), (err, result) => {
         if (err == null)
-            res.status(201).end();
+            res.status(201).json(result).end();
         else
             if (err.sqlState == 23000)
                 res.status(406).json(err).end();
@@ -17,7 +17,7 @@ const alterarPedidoEntrega = (req, res) => {
     con.query(Item.toUpdateEntrega(req.body), (err, result) => {
         if (err == null)
             if (result.affectedRows > 0)
-                res.status(200).end();
+                res.status(200).json(result).end();
             else
                 res.status(404).end();
         else
@@ -29,7 +29,7 @@ const alterarPedidoFim = (req, res) => {
     con.query(Item.toUpdateFim(req.body), (err, result) => {
         if (err == null)
             if (result.affectedRows > 0)
-                res.status(200).end();
+                res.status(200).json(result).end();
             else
                 res.status(404).end();
         else
