@@ -13,5 +13,6 @@ router.delete("/delPedido", pedidosController.deletarPedido);
 
 router.get("/listarEntregadores", entregadoresController.listarEntregadores);
 router.get("/buscarEntregador/:id", entregadoresController.Entregadores);
+router.post("/validarEmail", entregadoresController.login);
 
 module.exports = router;
