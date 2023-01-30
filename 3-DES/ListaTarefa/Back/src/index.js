@@ -1,12 +1,10 @@
 const express = require('express');
-const cors = require('cors');
 
-const itens = require('./routes/routes');
+const router = require('./routes/routes');
 
 const app = express();
 app.use(express.json());
-app.use(cors());
-app.use(itens);
+app.use(router);
 
 app.listen(5000, () => {
     console.log("Respondendo na porta 5000");
