@@ -23,22 +23,22 @@ export default function telaHome({ }) {
         }
     }
 
-    getData()
-
     function carregar() {
-        if (idEntregador >= 1) {
+        if (idEntregador[1] >= 1) {
             const options = { method: 'GET' };
 
-            fetch('http://localhost:5000/buscarEntregador/' + idEntregador, options)
+            fetch('http://localhost:5000/buscarEntregador/' + idEntregador[1], options)
                 .then(response => response.json())
                 .then(resp => {
-                    console.log(resp)
+                    console.log("kg")
                     setEntre(resp)
                 })
         } else {
             console.log("opaaa")
         }
     }
+
+    getData()
 
     useEffect(() => {
         carregar()
@@ -77,10 +77,10 @@ export default function telaHome({ }) {
 
     return (
         <View style={styles.v}>
-
             <ScrollView style={styles.sv}>
                 {
                     entre.map((e, index) => {
+                        console.log(e)
 
                         if (e.hora_fim === "" && e.hora_entrega !== "") {
                             return (
@@ -91,7 +91,7 @@ export default function telaHome({ }) {
                                         <Text style={styles.info}>Cliente: <Text style={styles.infoP}>{e.cliente}</Text></Text>
                                         <Text style={styles.info}>Endereço: <Text style={styles.infoP}>{e.endereco}</Text></Text>
                                         <Text style={styles.info}>Horario: <Text style={styles.infoP}>{e.hora_pedido}</Text></Text>
-                                        <Text style={styles.info}>Produto: <Text style={styles.infoP}>{e.id_produto}</Text></Text>
+                                        <Text style={styles.info}>Produto: <Text style={styles.infoP}>{e.produto}</Text></Text>
                                         <Text style={styles.info}>Data: <Text style={styles.infoP}>{e.data}</Text></Text>
                                         <Text style={styles.info}>Entrega: <Text style={styles.infoP}>{e.hora_entrega}</Text></Text>
                                     </View>

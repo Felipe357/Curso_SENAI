@@ -14,11 +14,7 @@ export default function telaHome({ }) {
       fetch('http://localhost:5000/listarpedidos', options)
         .then(response => response.json())
         .then(resp => {
-          console.log(resp)
-
           setEntre(resp)
-
-
         })
     
   }
@@ -64,8 +60,7 @@ export default function telaHome({ }) {
       <ScrollView style={styles.sv}>
         {
           entre.map((e, index) => {
-
-            if (e.hora_fim !== "" && e.hora_entrega === "") {
+            if (e.hora_fim === "" && e.hora_entrega === "") {
               return (
 
                 <View style={styles.pedido}>
@@ -73,10 +68,8 @@ export default function telaHome({ }) {
                     <Text style={styles.info}>ID: <Text style={styles.infoP}>{e.id_pedido}</Text></Text>
                     <Text style={styles.info}>Cliente: <Text style={styles.infoP}>{e.cliente}</Text></Text>
                     <Text style={styles.info}>Endereço: <Text style={styles.infoP}>{e.endereco}</Text></Text>
-                    <Text style={styles.info}>Horario: <Text style={styles.infoP}>{e.hora_pedido}</Text></Text>
-                    <Text style={styles.info}>Produto: <Text style={styles.infoP}>{e.id_produto}</Text></Text>
+                    <Text style={styles.info}>Produto: <Text style={styles.infoP}>{e.produto}</Text></Text>
                     <Text style={styles.info}>Data: <Text style={styles.infoP}>{e.data}</Text></Text>
-                    <Text style={styles.info}>Entrega: <Text style={styles.infoP}>{e.hora_entrega}</Text></Text>
                   </View>
                   <TouchableOpacity style={styles.btn} onPress={() => enviar(e.id_pedido)}><Text style={styles.te}>Enviar</Text></TouchableOpacity>
                 </View>

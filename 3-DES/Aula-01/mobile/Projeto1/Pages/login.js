@@ -14,9 +14,9 @@ export default function telaLogin({ navigation }) {
     const [at, setAt] = useState(false)
     const [info] = useState([])
 
-    const storeData = async () => {
+    const storeData = async (e) => {
 
-        info.push(usuario)
+        info.push(e)
         try {
             await AsyncStorage.setItem('Info', JSON.stringify(info))
         } catch (e) {
@@ -38,9 +38,9 @@ export default function telaLogin({ navigation }) {
             .then(response => response.json())
             .then(response => {
                 if (response !== undefined) {
+                    console.log(response[0].id_entregador)
                     navigation.navigate("Entregas")
-                    setUsuario(response.id_entregador)
-                    storeData()
+                    storeData(response[0].id_entregador)
                 }
             })
     }

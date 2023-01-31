@@ -12,7 +12,7 @@ export default function App() {
   return (
     <NavigationContainer independent={true}>
       <Stack.Navigator>
-        {/* <Stack.Screen name="Login" component={telaLogin} options={{ headerShown: false }}/> */}
+        <Stack.Screen name="Login" component={telaLogin} options={{ headerShown: false }}/>
         <Stack.Screen name="Entregas" component={telaEntregas} options={{ headerShown: false }}/>
       </Stack.Navigator>
     </NavigationContainer>
