@@ -42,4 +42,10 @@ body {
     width: 48%;
     border-radius: 15px;
     padding-left: 10px;
+    outline: none;
+}
+
+.modal>button {
+    height: 50px;
+    width: 140px;
 }
