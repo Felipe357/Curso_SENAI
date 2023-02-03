@@ -17,14 +17,22 @@ const readOne = async (req, res) => {
         select: {
             nome: true,
             valor: true,
-            setor_id: true
+            setor: true,
+            detalhe: true
         }
     });
     res.status(200).json(produto).end();
 }
 
 const read = async (req, res) => {
-    let produtos = await prisma.produto.findMany();
+    let produtos = await prisma.produto.findMany({
+        select: {
+            nome: true,
+            valor: true,
+            setor: true,
+            detalhe: true
+        }
+    });
     res.status(200).json(produtos).end();
 }
 

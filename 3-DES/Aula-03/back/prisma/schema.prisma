@@ -11,25 +11,44 @@ datasource db {
 }
 
 model Setor {
-  id Int @id @default(autoincrement())
-  nome String
-  comissao Float
-  produtos Produto[]
+  id          Int           @id @default(autoincrement())
+  nome        String
+  comissao    Float
+  produtos    Produto[]
   funcionario Funcionario[]
 }
 
 model Produto {
-  id Int @id @default(autoincrement())
-  nome String
-  valor Float
+  id       Int    @id @default(autoincrement())
+  nome     String
+  valor    Float
   setor_id Int
-  setor Setor @relation(fields: [setor_id], references: [id])
+  setor    Setor  @relation(fields: [setor_id], references: [id])
+  detalhe Detalhe[]
 }
 
 model Funcionario {
-  id Int @id @default(autoincrement())
-  nome String
-  salario Float
+  id       Int    @id @default(autoincrement())
+  nome     String
+  salario  Float
   setor_id Int
-  setor Setor @relation(fields: [setor_id], references: [id])
+  setor    Setor  @relation(fields: [setor_id], references: [id])
+  vendas Vendas[]
+}
+
+model Vendas {
+  id Int @id @default(autoincrement())
+  data DateTime @default(now())
+  funcionario_id Int
+  funcionario Funcionario @relation(fields: [funcionario_id], references: [id])
+  detalhe Detalhe[]
+}
+
+model Detalhe {
+  id Int @id @default(autoincrement())
+  produto_id Int 
+  produto Produto @relation(fields: [produto_id], references: [id])
+  venda_id Int
+  venda Vendas @relation(fields: [venda_id], references: [id])
+  quantidade Int
 }

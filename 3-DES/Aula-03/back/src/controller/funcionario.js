@@ -17,7 +17,8 @@ const readOne = async (req, res) => {
         select: {
             nome: true,
             salario: true,
-            setor_id: true
+            setor_id: true,
+            vendas: true
         }
     });
     res.status(200).json(funcionario).end();
