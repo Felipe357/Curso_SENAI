@@ -25,6 +25,6 @@ CREATE TABLE pedidos(
     FOREIGN KEY (id_entregador) REFERENCES entregadores(id_entregador)
 );
 
-LOAD DATA INFILE 'C:/Users/DESENVOLVIMENTO/Desktop/Curso_SENAI/3-DES/Aula-01/Banco/entregradores.csv' INTO TABLE entregadores FIELDS TERMINATED BY ';' ENCLOSED BY '"' LINES TERMINATED BY '\n' IGNORE 1 ROWS;
+LOAD DATA INFILE 'C:/Users/felip/OneDrive/Área de Trabalho/SENAI/3-DES/Aula-01/Banco/entregradores.csv' INTO TABLE entregadores FIELDS TERMINATED BY ';' ENCLOSED BY '"' LINES TERMINATED BY '\n' IGNORE 1 ROWS;
 
-LOAD DATA INFILE 'C:/Users/DESENVOLVIMENTO/Desktop/Curso_SENAI/3-DES/Aula-01/Banco/pedidos.csv' INTO TABLE pedidos FIELDS TERMINATED BY ';' ENCLOSED BY '"' LINES TERMINATED BY '\n' IGNORE 1 ROWS;
+LOAD DATA INFILE 'C:/Users/felip/OneDrive/Área de Trabalho/SENAI/3-DES/Aula-01/Banco/pedidos.csv' INTO TABLE pedidos FIELDS TERMINATED BY ';' ENCLOSED BY '"' LINES TERMINATED BY '\n' IGNORE 1 ROWS;

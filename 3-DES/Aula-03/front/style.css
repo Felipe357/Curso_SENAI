@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -22,7 +22,8 @@ body {
 }
 
 .modal {
-    height: 30vh;
+    position: absolute;
+    height: 35vh;
     width: 20vw;
     background-color: rgb(127, 150, 253);
     margin: 10px;
@@ -34,18 +35,139 @@ body {
     justify-content: space-around;
 }
 
-.modal>input {
+.modal>input, .modal>select {
     border: 2px solid rgb(224, 224, 224);
     background-color: white;
     box-shadow: 0px 0px 10px 3px rgba(231, 228, 228, 0.507);
-    height: 15%;
-    width: 48%;
+    height: 12%;
+    width: 58%;
     border-radius: 15px;
     padding-left: 10px;
     outline: none;
 }
 
-.modal>button {
+.title {
+    font-size: 20pt;
+    font-weight: 800;
+    color: #fff;
+    font-family: monospace;
+    letter-spacing: .3rem;
+    text-transform: uppercase;
+    border-bottom: 2px solid rgb(203, 204, 204);
+}
+
+.modal>select {
+    color: rgb(109, 108, 108);
+}
+
+.btns {
+    position: relative;
+    top: -37vh;
+    right: -19.5vw;
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn {
+    padding: 0 17px;
+    transform: translateX(-50%);
     height: 50px;
-    width: 140px;
+    border-radius: 100px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #99b9f5;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.btn:hover:before,
+.btn:hover:after {
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+}
+
+.btn:hover label {
+    width: 75PX;
+    opacity: 0.8;
+    margin-left: 10px;
+}
+
+.btnProduto:hover label {
+    width: 95px!important;
+}
+
+.btnFuncionario:hover label {
+    width: 130px!important;
+}
+
+.btn:before,
+.btn:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-radius: 100px;
+    background-color: #000;
+    opacity: 0;
+    transition: all 0.4s ease;
+    transition-delay: 0.1s;
+    z-index: 0;
+}
+
+.btn:after {
+    transition-delay: 0.3s;
+}
+
+.btn>span {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.btn>label {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 0;
+    white-space: nowrap;
+    opacity: 0;
+    overflow: hidden;
+    z-index: 1;
+    font-family: Helvetica;
+    font-size: 16px;
+    font-weight: normal;
+    transition: all 0.4s ease;
+    pointer-events: none;
+}
+
+#setor {
+    height: 45px;
+    width: 160px;
+    background-color: #99b9f5;
+    border: none;
+    border-radius: 20px;
+    letter-spacing: .2rem;
+    text-transform: uppercase;
+    font-size: 10pt;
+    font-weight: 700;
+    color: rgb(91, 102, 112);
+    transition: all 1s;
+}
+
+#setor:hover {
+    background-color: rgb(90, 104, 182);
+    color: azure;
 }
