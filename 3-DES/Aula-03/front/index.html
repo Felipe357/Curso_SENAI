@@ -10,14 +10,13 @@
 </head>
 
 <body>
-
     <div class="modals">
         <div class="btns">
-            <div class="btn btnSetor"><span>+</span><label for="">SETOR</label></div>
-            <div class="btn btnProduto"><span>+</span><label for="">PRODUTO</label></div>
-            <div class="btn btnFuncionario"><span>+</span><label for="">FUNCIONARIO</label></div>
+            <div class="btn btnSetor" onclick="btnSetor()"><img src="./imgs/grafico-de-pizza.png" alt=""><label for="">SETOR</label></div>
+            <div class="btn btnProduto" onclick="btnProduto()"><img src="./imgs/caixa.png" alt=""><label for="">PRODUTO</label></div>
+            <div class="btn btnFuncionario" onclick="btnFuncionario()"><img src="./imgs/funcionarios.png" alt=""><label for="">FUNCIONARIO</label></div>
         </div>
-        <div class="modal-setor modal">
+        <div class="modal-setor modal" id="setor2">
             <span class="title">Setor</span>
             <input type="text" placeholder="Nome" id="nomeSetor">
             <input type="text" placeholder="Comissão" id="comissaoSetor">
@@ -45,8 +44,7 @@
             <button id="setor">Adicionar</button>
         </div>
 
-
     </div>
 </body>
-
+<script src="./script.js"></script>
 </html>
