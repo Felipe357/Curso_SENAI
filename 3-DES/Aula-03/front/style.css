@@ -9,6 +9,17 @@ body {
     width: 100vw;
     background-color: rgb(233, 237, 240);
     overflow: hidden;
+    display: flex;
+}
+
+.info {
+    height: 100vh;
+    width: 60vw;
+    background-color: rgb(127, 150, 253);
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: flex-end;
 }
 
 .modals {
@@ -43,7 +54,7 @@ body {
 
 .modal-produto {
     left: -400px;
-    transition: all 3.8s ease-in-out!important;
+    transition: all 3.8s ease-in-out !important;
 }
 
 .modal-funcionario {
@@ -87,7 +98,19 @@ body {
     align-items: center;
 }
 
-.btn {
+.btns2 {
+    
+    margin-right: 48%!important;
+    height: 230px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.btns>.btn {
     padding: 0 17px;
     transform: translateX(-50%);
     height: 50px;
@@ -104,29 +127,29 @@ body {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-.btn:hover:before,
-.btn:hover:after {
+.btns>.btn:hover:before,
+.btns>.btn:hover:after {
     width: 100%;
     height: 100%;
     opacity: 0.3;
 }
 
-.btn:hover label {
+.btns>.btn:hover label {
     width: 75PX;
     opacity: 0.8;
     margin-left: 10px;
 }
 
-.btnProduto:hover label {
+.btns>.btnProduto:hover label {
     width: 95px !important;
 }
 
-.btnFuncionario:hover label {
+.btns>.btnFuncionario:hover label {
     width: 130px !important;
 }
 
-.btn:before,
-.btn:after {
+.btns>.btn:before,
+.btns>.btn:after {
     content: "";
     position: absolute;
     top: 50%;
@@ -142,11 +165,11 @@ body {
     z-index: 0;
 }
 
-.btn:after {
+.btns>.btn:after {
     transition-delay: 0.3s;
 }
 
-.btn>img {
+.btns>.btn>img {
     position: relative;
     display: inline-block;
     top: 5px;
@@ -155,7 +178,7 @@ body {
     width: 30px;
 }
 
-.btn>label {
+.btns>.btn>label {
     position: relative;
     display: inline-block;
     vertical-align: top;
@@ -188,4 +211,102 @@ body {
 #setor:hover {
     background-color: rgb(90, 104, 182);
     color: azure;
+}
+
+.btns2>.btn {
+    padding: 0 17px;
+    transform: translateX(50%);
+    height: 50px;
+    border-radius: 100px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+    background-color: rgb(230, 230, 230);
+    overflow: hidden;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.btns2>.btn:hover:before,
+.btns2>.btn:hover:after {
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+}
+
+.btns2>.btn:hover label {
+    width: 75PX;
+    opacity: 0.8;
+    margin-left: 10px;
+}
+
+.btns2>.btnProduto:hover label {
+    width: 95px !important;
+}
+
+.btns2>.btnFuncionario:hover label {
+    width: 130px !important;
+}
+
+.btns2>.btn:before,
+.btns2>.btn:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-radius: 100px;
+    background-color: #000;
+    opacity: 0;
+    transition: all 0.4s ease;
+    transition-delay: 0.1s;
+    z-index: 0;
+}
+
+.btns2>.btn:after {
+    transition-delay: 0.3s;
+}
+
+.btns2>.btn>img {
+    position: relative;
+    display: inline-block;
+    top: 5px;
+    z-index: 2;
+    pointer-events: none;
+    width: 30px;
+}
+
+.btns2>.btn>label {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 0;
+    white-space: nowrap;
+    opacity: 0;
+    overflow: hidden;
+    z-index: 1;
+    font-family: Helvetica;
+    font-size: 16px;
+    font-weight: normal;
+    transition: all 0.4s ease;
+    pointer-events: none;
+}
+
+.btns2>.infoProduto:hover label {
+    width: 95px !important;
+}
+
+.btns2>.infoFuncionario:hover label {
+    width: 130px !important;
+}
+
+.infoSetores {
+    background-color: rgb(230, 230, 230);
+    height: 80%;
+    width: 90%;
 }
