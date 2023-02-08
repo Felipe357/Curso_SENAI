@@ -23,21 +23,19 @@
             <span class="title">Setor</span>
             <input type="text" placeholder="Nome" id="nomeSetor">
             <input type="text" placeholder="Comissão" id="comissaoSetor">
-            <button id="setor">Adicionar</button>
+            <button id="setor" onclick="cadastrarSetor()">Adicionar</button>
         </div>
         <div class="modal-produto modal">
             <span class="title">Produto</span>
             <input type="text" placeholder="Nome" id="nomeProduto">
             <input type="text" placeholder="Valor" id="valorProduto">
             <div class="dropdown">
-                <button class="dropbtn"><span>Setor</span></button>
+                <button class="dropbtn" id="dropSetor"><span>Setor</span></button>
                 <div class="dropdown-content">
-                    <p id="Teste" onclick="selectBox(this)">Teste</p>
-                    <p id="Teste2" onclick="selectBox(this)">Teste</p>
-                    <p>Teste</p>
+                    <p id="Teste" class="model" onclick="selectBox(this)">Teste</p>
                 </div>
             </div>
-            <button id="setor">Adicionar</button>
+            <button id="setor" onclick="cadastrarProduto()">Adicionar</button>
         </div>
 
         <div class="modal-funcionario modal">
@@ -45,14 +43,12 @@
             <input type="text" placeholder="Nome" id="nomeFuncionario">
             <input type="text" placeholder="Salário" id="salarioFuncionario">
             <div class="dropdown">
-                <button class="dropbtn"><span>Setor</span></button>
-                <div class="dropdown-content">
-                    <p id="Teste" onclick="selectBox(this)">Teste</p>
-                    <p id="Teste2" onclick="selectBox(this)">Teste</p>
-                    <p>Teste</p>
+                <button class="dropbtn" id="dropSetor2"><span>Setor</span></button>
+                <div class="dropdown-content dropdown2">
+                    <p id="Teste" class="model" onclick="selectBox(this)">Teste</p>
                 </div>
             </div>
-            <button id="setor">Adicionar</button>
+            <button id="setor" onclick="cadastrarFuncionario()">Adicionar</button>
         </div>
 
     </div>
@@ -67,7 +63,7 @@
                     for="">FUNCIONARIO</label></div>
         </div>
 
-        <div class="infoSetores model">
+        <div class="infoSetores" id="stRemove">
             <div class="setor model">
                 <span>ID: <span id="idSetor">1</span></span>
                 <span>Nome: <span id="nomeSetor">Cosmeticos</span></span>
@@ -83,7 +79,7 @@
             </div>
         </div>
 
-        <div class="infoFuncionarios ">
+        <div class="infoFuncionarios model">
             <div class="funcionarios model">
                 <span>Id: <span id="idFuncionario">1</span></span>
                 <span>Nome: <span id="nomeFuncionario">Cosmeticos</span></span>
