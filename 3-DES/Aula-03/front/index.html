@@ -9,12 +9,15 @@
     <title>Loja</title>
 </head>
 
-<body>
+<body onload="carregarSetor(), carregarProduto(), carregarFuncionario()">
     <div class="modals">
         <div class="btns">
-            <div class="btn btnSetor" onclick="btnSetor()"><img src="./imgs/grafico-de-pizza.png" alt=""><label for="">SETOR</label></div>
-            <div class="btn btnProduto" onclick="btnProduto()"><img src="./imgs/caixa.png" alt=""><label for="">PRODUTO</label></div>
-            <div class="btn btnFuncionario" onclick="btnFuncionario()"><img src="./imgs/funcionarios.png" alt=""><label for="">FUNCIONARIO</label></div>
+            <div class="btn btnSetor" onclick="btnSetor()"><img src="./imgs/grafico-de-pizza.png" alt=""><label
+                    for="">SETOR</label></div>
+            <div class="btn btnProduto" onclick="btnProduto()"><img src="./imgs/caixa.png" alt=""><label
+                    for="">PRODUTO</label></div>
+            <div class="btn btnFuncionario" onclick="btnFuncionario()"><img src="./imgs/funcionarios.png" alt=""><label
+                    for="">FUNCIONARIO</label></div>
         </div>
         <div class="modal-setor modal" id="setor2">
             <span class="title">Setor</span>
@@ -26,9 +29,14 @@
             <span class="title">Produto</span>
             <input type="text" placeholder="Nome" id="nomeProduto">
             <input type="text" placeholder="Valor" id="valorProduto">
-            <select name="select" id="produto">
-                <option value="s">Setor</option>
-            </select>
+            <div class="dropdown">
+                <button class="dropbtn"><span>Setor</span></button>
+                <div class="dropdown-content">
+                    <p id="Teste" onclick="selectBox(this)">Teste</p>
+                    <p id="Teste2" onclick="selectBox(this)">Teste</p>
+                    <p>Teste</p>
+                </div>
+            </div>
             <button id="setor">Adicionar</button>
         </div>
 
@@ -36,11 +44,14 @@
             <span class="title">Funcioanrio</span>
             <input type="text" placeholder="Nome" id="nomeFuncionario">
             <input type="text" placeholder="Salário" id="salarioFuncionario">
-            <select name="select" id="funcionario">
-                <option value="s">Setor</option>
-                <option value="s">Teste01</option>
-                <option value="s">Teste02</option>
-            </select>
+            <div class="dropdown">
+                <button class="dropbtn"><span>Setor</span></button>
+                <div class="dropdown-content">
+                    <p id="Teste" onclick="selectBox(this)">Teste</p>
+                    <p id="Teste2" onclick="selectBox(this)">Teste</p>
+                    <p>Teste</p>
+                </div>
+            </div>
             <button id="setor">Adicionar</button>
         </div>
 
@@ -48,14 +59,36 @@
 
     <div class="info">
         <div class="btns2">
-            <div class="btn infoSetor" onclick=""><img src="./imgs/grafico-de-pizza.png" alt=""><label for="">SETOR</label></div>
-            <div class="btn infoProduto" onclick=""><img src="./imgs/caixa.png" alt=""><label for="">PRODUTO</label></div>
-            <div class="btn infoFuncionario" onclick=""><img src="./imgs/funcionarios.png" alt=""><label for="">FUNCIONARIO</label></div>
+            <div class="btn infoSetor" onclick="infoSetor()"><img src="./imgs/grafico-de-pizza.png" alt=""><label
+                    for="">SETOR</label></div>
+            <div class="btn infoProduto" onclick="infoProduto()"><img src="./imgs/caixa.png" alt=""><label for="">PRODUTO</label>
+            </div>
+            <div class="btn infoFuncionario" onclick="infoFuncionario()"><img src="./imgs/funcionarios.png" alt=""><label
+                    for="">FUNCIONARIO</label></div>
         </div>
 
-        <div class="infoSetores">
-            <div class="setor">
+        <div class="infoSetores model">
+            <div class="setor model">
+                <span>ID: <span id="idSetor">1</span></span>
+                <span>Nome: <span id="nomeSetor">Cosmeticos</span></span>
+                <span>Comissão: <span id="comissaoSetor">5%</span></span>
+            </div>
+        </div>
+        <div class="infoProdutos model">
+            <div class="produto model">
+                <span>Id: <span id="idProduto">1</span></span>
+                <span>Nome: <span id="nomeProduto">Cosmeticos</span></span>
+                <span>Valor: <span id="valorProduto">5%</span></span>
+                <span>Id Setor: <span id="idSetorProduto">2</span></span>
+            </div>
+        </div>
 
+        <div class="infoFuncionarios ">
+            <div class="funcionarios model">
+                <span>Id: <span id="idFuncionario">1</span></span>
+                <span>Nome: <span id="nomeFuncionario">Cosmeticos</span></span>
+                <span>Salario: <span id="salarioFuncionario">5%</span></span>
+                <span>Id Setor: <span id="idSetorFuncionario">2</span></span>
             </div>
         </div>
 
@@ -63,4 +96,5 @@
 
 </body>
 <script src="./script.js"></script>
+
 </html>

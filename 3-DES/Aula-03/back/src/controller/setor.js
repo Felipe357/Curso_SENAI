@@ -15,6 +15,7 @@ const readOne = async (req, res) => {
             id: Number(req.params.id)
         },
         select: {
+            id: true,
             nome: true,
             comissao: true,
             produtos: true,
@@ -27,6 +28,7 @@ const readOne = async (req, res) => {
 const read = async (req, res) => {
     let setors = await prisma.setor.findMany({
         select: {
+            id: true,
             nome: true,
             comissao: true,
             produtos: true,

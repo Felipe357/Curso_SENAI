@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Helvetica;
 }
 
 body {
@@ -10,6 +11,11 @@ body {
     background-color: rgb(233, 237, 240);
     overflow: hidden;
     display: flex;
+}
+
+.model {
+    display: none !important;
+    visibility: hidden;
 }
 
 .info {
@@ -45,7 +51,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    transition: all 2.4s ease-in;
+    transition: all 1.4s ease-in;
 }
 
 .modal-setor {
@@ -54,7 +60,7 @@ body {
 
 .modal-produto {
     left: -400px;
-    transition: all 3.8s ease-in-out !important;
+    transition: all 1.8s ease-in-out !important;
 }
 
 .modal-funcionario {
@@ -99,8 +105,8 @@ body {
 }
 
 .btns2 {
-    
-    margin-right: 48%!important;
+
+    margin-right: 48% !important;
     height: 230px;
     width: 100%;
     display: flex;
@@ -305,8 +311,117 @@ body {
     width: 130px !important;
 }
 
-.infoSetores {
-    background-color: rgb(230, 230, 230);
+.dropbtn {
+    border: 2px solid rgb(224, 224, 224) !important;
+    background-color: #f9f9f9;
+    box-shadow: 0px 0px 10px 3px rgba(231, 228, 228, 0.507);
+    height: 35px;
+    width: 220px;
+    border-radius: 15px;
+    font-size: 14pt;
+    border: none;
+    cursor: pointer;
+    color: #7e7d7d;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+    width: 100%;
+    border-bottom-left-radius: 15px !important;
+    border-bottom-right-radius: 15px !important;
+    box-shadow: 0px 0px 10px 3px rgba(231, 228, 228, 0.507);
+    border: 2px solid rgb(224, 224, 224);
+    border-top: none;
+}
+
+.dropdown-content p {
+    color: rgb(51, 51, 51);
+    padding: 12px 16px;
+    display: block;
+    font-weight: 400;
+    width: 100%;
+}
+
+.dropdown-content p:last-child {
+    border-bottom-left-radius: 15px !important;
+    border-bottom-right-radius: 15px !important;
+}
+
+.dropdown-content p:hover {
+    background-color: #caceca
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #f9f9f9;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.infoSetores,
+.infoProdutos,
+.infoFuncionarios {
+    background-color: rgba(230, 230, 230, 0);
     height: 80%;
     width: 90%;
+    padding: 30px 40px 0px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 60px;
+}
+
+.setor,
+.produto,
+.funcionarios {
+    background-color: rgb(230, 230, 230);
+    width: 200px;
+    height: 120px;
+    box-shadow: 0px 0px 10px 3px rgba(231, 228, 228, 0.507);
+    border: 2px solid #caceca;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px 0px 10px 20px;
+}
+
+.setor>span,
+.produto>span,
+.funcionarios>span {
+    font-size: 14pt;
+    font-weight: 700;
+}
+
+#idSetor,
+#nomeSetor,
+#comissaoSetor,
+#idFuncionario,
+#nomeFuncionario,
+#salarioFuncionario,
+#idSetorFuncionario,
+#idProduto,
+#nomeProduto,
+#valorProduto,
+#idSetorProduto {
+    font-size: 11pt;
+    font-weight: 500;
+}
+
+.produto {
+    width: 250px;
+    height: 170px;
 }
