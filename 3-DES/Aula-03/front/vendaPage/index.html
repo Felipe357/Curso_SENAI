@@ -22,14 +22,15 @@
         <div class="modal">
 
             <input type="text" placeholder="Funcionario" id="inpFc">
+            <span id="msgErro"></span>
             <div class="prod">
-                <div class="pr model">
+                <div class="pr model" id="12">
                     <span id="nomePr">Teste</span>
                     <input type="number" min="1" id="inpQntdPr" value="1">
                 </div>
                 <div class="produto" onclick="toggleModal()">+</div>
             </div>
-            
+            <button onclick="realizarVenda()"><span>confirmar</span></button>
             
         </div>
 

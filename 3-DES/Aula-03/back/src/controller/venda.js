@@ -4,8 +4,6 @@ const prisma = new PrismaClient();
 
 const create = async (req, res) => {
 
-    let idF
-
     let funcionario = await prisma.funcionario.findMany({
         where: req.body
     })

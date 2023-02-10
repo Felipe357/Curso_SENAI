@@ -29,6 +29,8 @@ function selectBox(e) {
     btn.querySelector(".dropbtn").querySelector("span").id = e.value
 }
 
+
+
 var contSetor = 0
 
 function carregarSetor() {
@@ -54,8 +56,15 @@ function carregarSetor() {
                     p.id = st.nome
                     p.value = st.id
 
+                    var p2 = document.querySelector(".dropdown-content").querySelector("p").cloneNode(true)
+                    p2.classList.remove("model")
+                    p2.innerHTML = st.nome
+                    p2.id = st.nome
+                    p2.value = st.id
+
+                    
+                    document.querySelector(".dropdown2").appendChild(p2)
                     document.querySelector(".dropdown-content").appendChild(p)
-                    document.querySelector(".dropdown2").appendChild(p)
                 }
 
             })
