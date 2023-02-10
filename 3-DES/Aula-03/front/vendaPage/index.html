@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Loja</title>
+</head>
+
+<body onload="carregarVenda(), carregarProduto()">
+    <div class="modals">
+
+        <div class="modal-pr model">
+            <div class="modal-pr-info">
+                <span>Produtos</span>
+                <span id="modal-nome-pr" class="model" onclick="addVenda(this)"></span>
+            </div>
+        </div>
+
+        <div class="modal">
+
+            <input type="text" placeholder="Funcionario" id="inpFc">
+            <div class="prod">
+                <div class="pr model">
+                    <span id="nomePr">Teste</span>
+                    <input type="number" min="1" id="inpQntdPr" value="1">
+                </div>
+                <div class="produto" onclick="toggleModal()">+</div>
+            </div>
+            
+            
+        </div>
+
+    </div>
+
+    <div class="info">
+        
+        <div class="venda model">
+            <span>Data: <span id="data">21/23/43 12:12:12</span></span>
+            <span>Funcionário: <span id="nomeFc">Felipe</span></span>
+            <span>Setor: <span id="nomeSt">Cosméticos</span></span>
+            <span>Quantidade Produto: <span id="qntdPr">3</span></span>
+        </div>
+
+    </div>
+    <a href="../index.html">Gerenciar</a>
+
+</body>
+<script src="./script.js"></script>
+
+</html>

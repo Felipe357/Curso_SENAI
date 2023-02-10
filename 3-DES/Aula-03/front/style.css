@@ -13,6 +13,31 @@ body {
     display: flex;
 }
 
+a {
+    position: absolute;
+    right: 60px;
+    bottom: 30px;
+    text-decoration: none;
+    color: #caceca;
+    background: rgb(243, 243, 243);
+    background: linear-gradient(to left, rgb(73, 136, 209) 50%, rgb(4, 118, 211) 50%) right;
+    background-size: 200%;
+    transition: .5s ease-out;
+    width: 170px;
+    height: 60px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+    font-weight: 700;
+    transition: all .5s linear;
+}
+
+a:hover {
+    background-position: left;
+}
+
 .model {
     display: none !important;
     visibility: hidden;

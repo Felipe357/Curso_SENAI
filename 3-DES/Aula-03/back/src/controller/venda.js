@@ -3,11 +3,23 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
 const create = async (req, res) => {
-    let venda = await prisma.vendas.createMany({
-        data: req.body,
-        skipDuplicates: true
-      });
-    res.status(200).json(venda).end();
+
+    let idF
+
+    let funcionario = await prisma.funcionario.findMany({
+        where: req.body
+    })
+
+    if (funcionario.length !== 0) {
+        let venda = await prisma.vendas.createMany({
+            data: { funcionario_id: parseInt(funcionario[0].id) },
+            skipDuplicates: true
+        })
+        res.status(200).json(venda).end();
+    } else {
+        res.status(200).json("Nome do funcionário incorreto").end();
+    }
+
 }
 
 const readOne = async (req, res) => {
@@ -30,7 +42,16 @@ const read = async (req, res) => {
         select: {
             id: true,
             data: true,
-            funcionario: true,
+            funcionario: {
+                select: {
+                    nome: true,
+                    setor: {
+                        select: {
+                            nome:true
+                        }
+                    }
+                }
+            },
             detalhe: true
         }
     });
